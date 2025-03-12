@@ -5,9 +5,9 @@ import FormContact from "@/components/property/FormContact";
 
 import ProfessionalInfo from "@/components/property/ProfessionalInfo";
 import ReviewBoxForm from "@/components/property/ReviewBoxForm";
-import AvailableAgent from "@/components/property/agency-single/AvailableAgent";
-import ListingItemsContainer from "@/components/property/agency-single/ListingItems";
-import SingleAgencyCta from "@/components/property/agency-single/SingleAgencyCta";
+// import AvailableAgent from "@/components/property/agency-single/AvailableAgent";
+// import ListingItemsContainer from "@/components/property/agency-single/ListingItems";
+// import SingleAgencyCta from "@/components/property/agency-single/SingleAgencyCta";
 import AllReviews from "@/components/property/reviews";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +17,7 @@ export const metadata = {
   title: "Agency Single || Homez - Real Estate NextJS Template",
 };
 
-const AgencySingle = ({params}) => {
+const AgencySingle = ({ params }) => {
   return (
     <>
       {/* Main Header Nav */}
@@ -34,12 +34,11 @@ const AgencySingle = ({params}) => {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-xl-7">
-                <SingleAgencyCta id={params.id} />
+                {/* <SingleAgencyCta id={params.id} /> */}
                 <div className="img-box-12 position-relative d-none d-xl-block">
                   <Image
                     width={120}
                     height={120}
-                    
                     className="img-1 spin-right"
                     src="/images/about/element-12.png"
                     alt="agents"
@@ -131,14 +130,14 @@ const AgencySingle = ({params}) => {
               </div>
               {/* End .row */}
 
-              <ListingItemsContainer/>
+              {/* <ListingItemsContainer /> */}
               {/* End .row */}
 
               <div className="row pt30 bdrb1">
                 <div className="col-lg-12">
                   <h6 className="fz17">Agents</h6>
                 </div>
-                <AvailableAgent />
+                {/* <AvailableAgent /> */}
               </div>
               {/* End .row */}
 

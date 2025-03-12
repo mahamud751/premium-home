@@ -5,7 +5,7 @@ import TopFilter from "./TopFilter";
 
 import PaginationTwo from "../listing/PaginationTwo";
 import { agentsData } from "@/data/agency";
-import AllAgents from "./agency/AllAgency";
+// import AllAgents from "./agency/AllAgency";
 
 export default function FilteringAgency() {
   const [filteredData, setFilteredData] = useState([]);
@@ -109,7 +109,7 @@ export default function FilteringAgency() {
         {/* End .row */}
 
         <div className="row" data-aos="fade-up" data-aos-delay="100">
-          <AllAgents data={pageItems} />
+          {/* <AllAgents data={pageItems} /> */}
         </div>
         {/* End .row */}
 
