@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@babel/core": "7.0.0",
+    "@babel/core": "^7.26.10",
     "@popperjs/core": "^2.11.8",
     "@react-google-maps/api": "^2.19.2",
     "aos": "^2.3.4",
@@ -19,7 +19,7 @@
     "eslint-config-next": "^14.1.0",
     "next": "^15.2.2",
     "photoswipe": "^5.3.8",
-    "prop-types": "15.6.0",
+    "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.2",
     "react-countup": "^6.4.2",
@@ -35,9 +35,14 @@
     "react-select": "^5.7.3",
     "react-slick": "^0.30.2",
     "react-tooltip": "^5.21.1",
-    "recharts": "2.2.0",
+    "recharts": "^2.15.1",
     "sass": "^1.63.4",
     "slick-carousel": "^1.8.1",
     "swiper": "^8.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "typescript": "^5.8.2"
   }
 }
