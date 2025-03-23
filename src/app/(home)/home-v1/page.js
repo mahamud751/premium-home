@@ -18,6 +18,8 @@ import TrustedWorld from "@/components/home/home-v1/TrustedWorld";
 import ReturnCalculator from "@/components/home/home-v1/ReturnCalculator";
 import RealStateCombines from "@/components/home/home-v1/RealStateCombines";
 import StartBuying from "@/components/home/home-v1/StartBuying";
+import FilterProperties from "@/components/home/home-v1/FilterProperties";
+import Slider from "@/components/home/home-v1/Slider";
 
 export const metadata = {
   title: "Home v1 || Homez - Real Estate NextJS Template",
@@ -35,29 +37,8 @@ const Home_V1 = () => {
       {/* End Mobile Nav  */}
 
       {/* Home Banner Style V1 */}
-      <section className="home-banner-style1 p0">
-        <div className="home-style1">
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-11 mx-auto">
-                <Hero />
-              </div>
-            </div>
-          </div>
-          {/* End .container */}
 
-          <a href="#explore-property">
-            <div className="mouse_scroll animate-up-4">
-              <Image
-                width={20}
-                height={105}
-                src="/images/about/home-scroll.png"
-                alt="scroll image"
-              />
-            </div>
-          </a>
-        </div>
-      </section>
+      <Slider />
       {/* End Home Banner Style V1 */}
 
       {/* Explore Apartment */}
@@ -91,37 +72,45 @@ const Home_V1 = () => {
         </div>
       </section>
       {/* End Explore Apartment */}
-
-      {/* Featured Listings */}
-      <section className="bgc-f7">
+      <section className="pb40-md pb90">
         <div className="container">
-          <div className="row align-items-center" data-aos="fade-up">
+          <div
+            className="row align-items-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <div className="col-lg-9">
               <div className="main-title2">
-                <h2 className="title">Featured Properties</h2>
+                <h2 className="title">Properties by Cities</h2>
                 <p className="paragraph">
-                  We only select properties with the highest income potential
+                  Aliquam lacinia diam quis lacus euismod
                 </p>
               </div>
             </div>
+            {/* End col-lg-9 */}
+
             <div className="col-lg-3">
               <div className="text-start text-lg-end mb-3">
-                <Link className="ud-btn2" href="/grid-full-3-col">
-                  See All Properties
+                <Link className="ud-btn2" href="/map-v4">
+                  See All Cities
                   <i className="fal fa-arrow-right-long" />
                 </Link>
               </div>
             </div>
+            {/* End col-lg-3 */}
           </div>
-          {/* End header */}
+          {/* End .row */}
 
-          <div className="row">
-            <div className="col-lg-12" data-aos="fade-up" data-aos-delay="200">
-              <div className="feature-listing-slider">
-                <FeaturedListings />
-              </div>
-            </div>
+          <div className="row" data-aos="fade-up" data-aos-delay="300">
+            <PropertiesByCities />
           </div>
+          {/* End .row */}
+        </div>
+      </section>
+      {/* Featured Listings */}
+      <section className="pt-0 pb60">
+        <div className="container">
+          <FilterProperties />
         </div>
       </section>
       {/* End Featured Listings */}
