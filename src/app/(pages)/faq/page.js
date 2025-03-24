@@ -2,8 +2,7 @@ import CallToActions from "@/components/common/CallToActions";
 import DefaultHeader from "@/components/common/DefaultHeader";
 import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
-import Faq1 from "@/components/pages/faq/Faq1";
-import Faq2 from "@/components/pages/faq/Faq2";
+import FaqContent from "@/components/pages/faq/FaqContent";
 
 export const metadata = {
   title: "Faq  || Homez - Real Estate NextJS Template",
@@ -37,6 +36,9 @@ const Faq = () => {
         </div>
       </section>
       {/* End Breadcrumb Sections */}
+
+      {/* FAQ content */}
+      <FaqContent />
 
       {/* FAQ Section Area */}
       {/* <section className="our-faq pb90 pt-0">
