@@ -39,7 +39,7 @@ const Faq = () => {
       {/* End Breadcrumb Sections */}
 
       {/* FAQ Section Area */}
-      <section className="our-faq pb90 pt-0">
+      {/* <section className="our-faq pb90 pt-0">
         <div className="container">
           <div className="row wow fadeInUp" data-wow-delay="300ms">
             <div className="col-lg-12">
@@ -49,7 +49,6 @@ const Faq = () => {
                   <Faq1 />
                 </div>
               </div>
-              {/* End ui-content */}
 
               <div className="ui-content">
                 <h4 className="title">Question About Renting</h4>
@@ -57,12 +56,10 @@ const Faq = () => {
                   <Faq2 />
                 </div>
               </div>
-              {/* End ui-content */}
             </div>
-            {/* End .col-lg-12 */}
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End FAQ Section Area */}
 
       {/* Our CTA */}

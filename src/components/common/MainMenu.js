@@ -121,7 +121,7 @@ const MainMenu = () => {
       {/* End listings */}
 
       <li className="visible_list dropitem">
-        <a className="list-item" href="#">
+        <a className="list-item" href="/faq">
           <span
             className={topMenu == "property" ? "title menuActive" : "title"}
           >
