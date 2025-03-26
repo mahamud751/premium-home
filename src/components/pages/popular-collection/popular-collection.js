@@ -1,12 +1,12 @@
 "use client";
 
-import { useCallback, useRef } from "react";
-import LightGallery from "lightgallery/react";
-import lgVideo from "lightgallery/plugins/video";
-import lgThumbnail from "lightgallery/plugins/thumbnail";
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-video.css";
 import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-video.css";
+import "lightgallery/css/lightgallery.css";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgVideo from "lightgallery/plugins/video";
+import LightGallery from "lightgallery/react";
+import { useCallback, useRef } from "react";
 
 const PopularCollection = () => {
   const lightGalleryRef = useRef(null);
@@ -20,19 +20,19 @@ const PopularCollection = () => {
     },
     {
       category: "Classic Collection",
-      location: "Dhaka, Chattogram",
+      location: "Rajshahi",
       thumbnail: "/images/about/about-3.jpg",
       videoUrl: "https://youtu.be/TDGgyVwF9qc?si=RI6ZFr9HEhnF3Nst",
     },
     {
       category: "Wellness Communities",
-      location: "Dhaka, Rajshahi",
+      location: "Chapainawabganj",
       thumbnail: "/images/about/about-3.jpg",
       videoUrl: "https://youtu.be/TDGgyVwF9qc?si=RI6ZFr9HEhnF3Nst",
     },
     {
       category: "Commercial Collection",
-      location: "Dhaka, Chapai",
+      location: "Bougra",
       thumbnail: "/images/about/about-3.jpg",
       videoUrl: "https://youtu.be/TDGgyVwF9qc?si=RI6ZFr9HEhnF3Nst",
     },
@@ -73,6 +73,14 @@ const PopularCollection = () => {
               data-video={`{"source": [{"src":"${collection.videoUrl}", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}}`}
               data-sub-html={`<h4>${collection.category}</h4><p>${collection.location}</p>`}
             >
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <h3 className="text-lg font-semibold uppercase">
+                  {collection.category}
+                </h3>
+                <p className="text-sm border rounded px-3  py-1    uppercase">
+                  {collection.location}
+                </p>
+              </div>
               <div className="relative">
                 <img
                   src={collection.thumbnail}
@@ -90,14 +98,6 @@ const PopularCollection = () => {
                     </svg>
                   </div>
                 </div>
-              </div>
-              <div className="mt-4">
-                <h3 className="text-lg font-semibold uppercase">
-                  {collection.category}
-                </h3>
-                <p className="text-sm text-gray-400 uppercase">
-                  {collection.location}
-                </p>
               </div>
             </a>
           ))}
