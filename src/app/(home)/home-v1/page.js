@@ -14,6 +14,7 @@ import ReturnCalculator from "@/components/home/home-v1/ReturnCalculator";
 import Slider from "@/components/home/home-v1/Slider";
 import StartBuying from "@/components/home/home-v1/StartBuying";
 import PopularCollection from "@/components/pages/popular-collection/popular-collection";
+import Reviews from "@/components/pages/reviews/Reviews";
 import Link from "next/link";
 
 export const metadata = {
@@ -107,6 +108,10 @@ const Home_V1 = () => {
         <div className="container">
           <PopularCollection />
         </div>
+      </section>
+      {/* Reviews */}
+      <section className="pt-0 pb60">
+        <Reviews />
       </section>
       {/* Featured Listings */}
       <section className="pt-0 pb60">
