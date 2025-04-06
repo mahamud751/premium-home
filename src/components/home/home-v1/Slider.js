@@ -84,7 +84,8 @@ const Slider = () => {
       <div className={styles.button}>
         <button onClick={handlePrev} className={styles.prev}>
           <i className="fa-solid fa-arrow-left"></i>
-        </button>
+        </button>{" "}
+        &nbsp;
         <button onClick={handleNext} className={styles.next}>
           <i className="fa-solid fa-arrow-right"></i>
         </button>

@@ -2,24 +2,20 @@ import Explore from "@/components/common/Explore";
 import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
 
-import CustomerReviews from "@/components/home/home-v1/CustomerReviews";
-import CallToActions from "@/components/common/CallToActions";
-import FeaturedListings from "@/components/home/home-v1/FeatuerdListings";
-import Header from "@/components/home/home-v1/Header";
-import Partner from "@/components/common/Partner";
-import PopularListings from "@/components/home/home-v1/PopularListings";
-import PropertiesByCities from "@/components/home/home-v1/PropertiesByCities";
-import Benifits from "@/components/home/home-v1/Benifits";
-import Hero from "@/components/home/home-v1/hero";
-import Image from "next/image";
 import HolderBenifits from "@/components/common/HolderBenifits";
-import Link from "next/link";
-import TrustedWorld from "@/components/home/home-v1/TrustedWorld";
-import ReturnCalculator from "@/components/home/home-v1/ReturnCalculator";
-import RealStateCombines from "@/components/home/home-v1/RealStateCombines";
-import StartBuying from "@/components/home/home-v1/StartBuying";
+import Partner from "@/components/common/Partner";
+import Benifits from "@/components/home/home-v1/Benifits";
+import CustomerReviews from "@/components/home/home-v1/CustomerReviews";
 import FilterProperties from "@/components/home/home-v1/FilterProperties";
+import Header from "@/components/home/home-v1/Header";
+import PropertiesByCities from "@/components/home/home-v1/PropertiesByCities";
+import RealStateCombines from "@/components/home/home-v1/RealStateCombines";
+import ReturnCalculator from "@/components/home/home-v1/ReturnCalculator";
 import Slider from "@/components/home/home-v1/Slider";
+import StartBuying from "@/components/home/home-v1/StartBuying";
+import PopularCollection from "@/components/pages/popular-collection/popular-collection";
+import Reviews from "@/components/pages/reviews/Reviews";
+import Link from "next/link";
 
 export const metadata = {
   title: "Home v1 || Homez - Real Estate NextJS Template",
@@ -106,6 +102,16 @@ const Home_V1 = () => {
           </div>
           {/* End .row */}
         </div>
+      </section>
+      {/* Popular collection */}
+      <section className="pt-0 pb60">
+        <div className="container">
+          <PopularCollection />
+        </div>
+      </section>
+      {/* Reviews */}
+      <section className="pt-0 pb60">
+        <Reviews />
       </section>
       {/* Featured Listings */}
       <section className="pt-0 pb60">

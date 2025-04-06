@@ -51,23 +51,23 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="our-faq pt-0 bg-gray-100 min-h-screen py-12">
-      <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row gap-6">
-        {/* Sidebar Categories - 30% Width */}
-        <div className="w-full md:w-3/10 bg-[#046C4E] text-white p-6 rounded-xl shadow-lg flex-shrink-0">
-          <h2 className="text-xl font-bold mb-6">Categories</h2>
+    <section className="our-faq pt-0 py-12 md:px-4">
+      <div className="container mx-auto max-w-7xl flex flex-col md:flex-row gap-6">
+        {/* Sidebar Categories */}
+        <div className="w-full md:w-1/4 bg-[#046C4E] text-white p-3 md:p-6 rounded-xl shadow-lg">
+          <h2 className="text-xl font-bold md:mb-6 text-white">Categories</h2>
           <ul className="space-y-3">
             {Object.keys(faqData).map((category) => (
               <li
                 key={category}
-                className={`p-3 cursor-pointer rounded-lg transition-all duration-300 ${
+                className={`md:p-3 p-2 cursor-pointer rounded-lg transition-all duration-300 ${
                   activeCategory === category
                     ? "bg-white text-teal-800 font-semibold shadow-md"
                     : "hover:bg-teal-700"
                 }`}
                 onClick={() => {
                   setActiveCategory(category);
-                  setOpenIndex(null); // Reset accordion when switching categories
+                  setOpenIndex(null);
                 }}
               >
                 {category}
@@ -76,19 +76,19 @@ export default function FAQSection() {
           </ul>
         </div>
 
-        {/* FAQ Content - 70% Width */}
-        <div className="w-full md:w-7/10 bg-white p-6 rounded-xl shadow-lg border border-gray-200 flex-grow">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-teal-800">
+        {/* FAQ Content */}
+        <div className="w-full md:w-3/4 bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+          <h2 className="text-2xl md:text-3xl font-bold    text-teal-800">
             {activeCategory}
           </h2>
           <div className="space-y-4">
             {faqData[activeCategory].map((faq, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-lg overflow-hidden transition-all duration-300"
+                className="border border-gray-200 rounded-lg overflow-hidden"
               >
                 <div
-                  className="w-full cursor-pointer text-left p-4 bg-gray-50 hover:bg-gray-100 flex justify-between items-center font-medium text-gray-800 focus:outline-none"
+                  className="w-full cursor-pointer text-left p-4 bg-gray-50 hover:bg-gray-100 flex justify-between items-center font-medium text-gray-800"
                   onClick={() =>
                     setOpenIndex(openIndex === index ? null : index)
                   }
