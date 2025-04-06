@@ -7,7 +7,7 @@ import AboutContent from "@/components/pages/about/AboutContent";
 import Link from "next/link";
 
 export const metadata = {
-  title: "About  || Sharikana",
+  title: "About ",
 };
 
 const About = () => {

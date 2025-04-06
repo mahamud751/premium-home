@@ -32,9 +32,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white"
-              >
-                ib-themes
-              </a>{" "}
+              ></a>{" "}
               - All rights reserved
             </p>
           </div>

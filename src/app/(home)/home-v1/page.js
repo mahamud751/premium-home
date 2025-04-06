@@ -16,6 +16,7 @@ import StartBuying from "@/components/home/home-v1/StartBuying";
 import PopularCollection from "@/components/pages/popular-collection/popular-collection";
 import Reviews from "@/components/pages/reviews/Reviews";
 import Link from "next/link";
+import Blog from "@/components/home/home-v1/Blog";
 
 export const metadata = {
   title: "Home v1 || Homez - Real Estate NextJS Template",
@@ -122,15 +123,16 @@ const Home_V1 = () => {
       {/* End Featured Listings */}
 
       {/* Explore property-city */}
-      <section className="pb40-md pb90">
+      {/* <section className="pb40-md pb90">
         <div className="container investor_calculator">
           <h2 className="text-center mb-4">Return Calculator</h2>
           <ReturnCalculator />
         </div>
-      </section>
+      </section> */}
       {/* End Explore property-city */}
 
       {/* Our Partners */}
+
       <section
         className="our-partners pt0"
         style={{ backgroundColor: " #F7F7F7" }}
@@ -163,118 +165,47 @@ const Home_V1 = () => {
           </div>
         </div>
       </section>
-      {/* End Our Partners */}
 
-      {/* Our Testimonials */}
-      <section className="pb100 pb50-md ">
+      <section className="pb90 pb20-md">
         <div className="container">
-          <div className="row justify-content-between align-items-center">
-            <div className="col-auto">
-              <div
-                className="main-title"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <h2 className="title">
-                  We are on a mission to democratize property ownership.
-                </h2>
+          <div className="row">
+            <div className="col-lg-6 m-auto" data-aos="fade-up">
+              <div className="main-title text-start text-md-center">
+                <h2 className="title">From Our Blog</h2>
                 <p className="paragraph">
-                  90% of the worlds millionaires made their fortunes through
-                  property, but it’s highly inaccessible, illiquid, and
-                  complicated - that’s where we come in!
+                  Aliquam lacinia diam quis lacus euismod
                 </p>
               </div>
             </div>
           </div>
           {/* End .row */}
 
-          <div className="row">
-            <div className="col-lg-12">
-              <div
-                className="testimonial-slider"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <Benifits />
-              </div>
-            </div>
+          <div className="row" data-aos="fade-up" data-aos-delay="300">
+            <Blog />
           </div>
+          {/* End .row */}
         </div>
       </section>
+
+      {/* End Our Partners */}
+
+      {/* Our Testimonials */}
+
       {/* End Our Testimonials */}
 
-      <section
+      {/* <section
         className="our-partners pt0"
         style={{ backgroundColor: " #F7F7F7" }}
       >
         <div className="container">
           <HolderBenifits />
         </div>
-      </section>
+      </section> */}
       {/* Customer Review Start*/}
-      <section id="explore-property" className="pb90 pb30-md">
-        <div className="container">
-          <div className="row  justify-content-between align-items-center">
-            <div className="col-auto">
-              <div
-                className="main-title"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <h2
-                  className="title text-center"
-                  style={{
-                    color: "#00C194",
-                  }}
-                >
-                  People Love Living with
-                </h2>
-              </div>
-            </div>
-            {/* End header */}
 
-            <div className="col-auto mb30">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-auto">
-                  <button className="prev__active swiper_button">
-                    <i className="far fa-arrow-left-long" />
-                  </button>
-                </div>
-                {/* End prev */}
-
-                <div className="col-auto">
-                  <div className="pagination swiper--pagination pagination__active" />
-                </div>
-                {/* End pagination */}
-
-                <div className="col-auto">
-                  <button className="next__active swiper_button">
-                    <i className="far fa-arrow-right-long" />
-                  </button>
-                </div>
-                {/* End Next */}
-              </div>
-            </div>
-            {/* End .col for navigation and pagination */}
-          </div>
-          {/* End .row */}
-
-          <div className="row">
-            <div className="col-lg-12">
-              <div
-                className="explore-apartment-slider"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <CustomerReviews />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       {/* Customer Review End */}
 
-      <section
+      {/* <section
         id="explore-property"
         className="pb90 pb30-md"
         style={{
@@ -323,9 +254,9 @@ const Home_V1 = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Start Buying */}
-      <StartBuying />
+      {/* <StartBuying /> */}
       {/* Start Our Footer */}
       <section className="footer-style1 pt60 pb-0">
         <Footer />

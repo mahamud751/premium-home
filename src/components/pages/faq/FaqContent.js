@@ -1,54 +1,51 @@
 "use client";
 
-import { useState } from "react";
-
-const faqData = {
-  "General FAQ": [
-    {
-      question: "What is Sharikana?",
-      answer:
-        "Sharikana is a market hub where you can invest in Venture projects & Commercial assets fractionally.",
-    },
-    {
-      question: "What does Sharikana do?",
-      answer:
-        "Sharikana allows users to invest in various projects securely and efficiently.",
-    },
-    {
-      question: "How does Sharikana work?",
-      answer:
-        "It connects investors with lucrative investment opportunities with transparency.",
-    },
-  ],
-  "Project Investment FAQ": [
-    {
-      question: "How do I invest in a project?",
-      answer:
-        "You can browse projects and invest directly through our platform.",
-    },
-    {
-      question: "What are the risks involved?",
-      answer:
-        "All investments carry risks. We provide detailed reports to help you make informed decisions.",
-    },
-  ],
-  "Co-ownership FAQ": [
-    {
-      question: "How does co-ownership work?",
-      answer:
-        "Multiple investors can own a fraction of an asset and share profits accordingly.",
-    },
-    {
-      question: "What legal documents are required?",
-      answer:
-        "Proper agreements and legal documents ensure smooth co-ownership transitions.",
-    },
-  ],
-};
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function FAQSection() {
-  const [activeCategory, setActiveCategory] = useState("General FAQ");
+  const [activeCategory, setActiveCategory] = useState("General");
   const [openIndex, setOpenIndex] = useState(null);
+  const [faqData, setFaqData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchFaqData = async () => {
+      try {
+        const response = await axios.get(
+          "https://premium.samironbarai.xyz/v1/faqs"
+        );
+        setFaqData(response.data.data);
+        setLoading(false);
+      } catch (err) {
+        setError("Failed to fetch FAQ data");
+        setLoading(false);
+      }
+    };
+
+    fetchFaqData();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="our-faq pt-0 py-12 md:px-4">
+        <div className="container mx-auto max-w-7xl">
+          <p className="text-center">Loading FAQs...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="our-faq pt-0 py-12 md:px-4">
+        <div className="container mx-auto max-w-7xl">
+          <p className="text-center text-red-600">{error}</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="our-faq pt-0 py-12 md:px-4">
@@ -78,13 +75,13 @@ export default function FAQSection() {
 
         {/* FAQ Content */}
         <div className="w-full md:w-3/4 bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-          <h2 className="text-2xl md:text-3xl font-bold    text-teal-800">
+          <h2 className="text-2xl md:text-3xl font-bold text-teal-800">
             {activeCategory}
           </h2>
           <div className="space-y-4">
             {faqData[activeCategory].map((faq, index) => (
               <div
-                key={index}
+                key={faq.id}
                 className="border border-gray-200 rounded-lg overflow-hidden"
               >
                 <div
