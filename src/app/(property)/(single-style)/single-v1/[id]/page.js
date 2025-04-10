@@ -51,9 +51,9 @@ const SingleV1 = ({ params }) => {
 
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <ProperytyDescriptions />
-                <div className="mt-4">
-                  <PropertyAddress />
-                </div>
+
+                {/* property address */}
+                <PropertyAddress />
 
                 {/* End property description */}
               </div>
