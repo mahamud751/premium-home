@@ -42,16 +42,16 @@ const DetailsRightSide = () => {
         </h3>
         <div className="space-y-3">
           {/* Name */}
-          <div className="flex items-center space-x-3">
-            <FaUser className="text-gray-600" size={18} />
+          <div className="flex items-center space-x-2">
+            <FaUser className="text-gray-600 -mt-4" size={18} />
             <p className="text-gray-800">
               <span className="font-medium">Name:</span> Md. Sajal Ali
             </p>
           </div>
 
           {/* Phone */}
-          <div className="flex items-center space-x-3">
-            <FaPhone className="text-gray-600" size={18} />
+          <div className="flex items-center space-x-2">
+            <FaPhone className="text-gray-600 -mt-4" size={17} />
             <p className="text-gray-800">
               <span className="font-medium">Call:</span>{" "}
               <a
