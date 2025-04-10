@@ -1,99 +1,81 @@
-import { FaPhone, FaUser, FaWhatsapp } from "react-icons/fa";
+import { FaPhone, FaUser, FaWhatsapp, FaInfoCircle } from "react-icons/fa";
 
 const DetailsRightSide = () => {
   return (
-    <div>
-      {/* End nav-pills */}
-
-      {/* End .col-12 */}
-
-      <div className="row wrap">
-        <div className="col-lg-6">
-          <span className="me-2">ERY (Annual)</span>
-          <i className="fa-solid fa-circle-info"></i>
-        </div>
-        <div className="col-lg-6 text-end">
-          {" "}
-          <span className="fs-5 text-thm">11%</span>
-        </div>
-      </div>
-      <div className="row wrap my-3">
-        <div className="col-lg-6">
-          <span className="me-2 ">ECY (Annual)</span>
-          <i className="fa-solid fa-circle-info"></i>
-        </div>
-        <div className="col-lg-6 text-end">
-          {" "}
-          <span className="fs-5 text-thm">2%</span>
-        </div>
-      </div>
-      <div className="row wrap ">
-        <div className="col-lg-6">
-          <span className="me-2">IRR (Annual)</span>
-          <i className="fa-solid fa-circle-info"></i>
-        </div>
-        <div className="col-lg-6 text-end">
-          {" "}
-          <span className="fs-5 text-thm">13%</span>
-        </div>
-      </div>
-      <div className="col-md-12 mt-3">
-        <div className="d-grid">
-          <button type="submit" className="ud-btn btn-thm p-2">
-            Invest Now
-          </button>
-          {/* <button
-            type="submit"
-            className="ud-btn btn-thm mt-3 border-0 p-2"
-            style={{ background: "#878787" }}
+    <>
+      {/* Financial Metrics Section */}
+      <div className="space-y-4 mb-6">
+        {[
+          { label: "ERY (Annual)", value: "11%" },
+          { label: "ECY (Annual)", value: "2%" },
+          { label: "IRR (Annual)", value: "13%" },
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="flex justify-between items-center p-3 bg-gray-50 rounded-md hover:bg-gray-100 transition"
           >
-            Set Property
-          </button> */}
-          <div className="text-center mt-2">
-            <span className="text fz14">BDT10,000 minimum</span>
+            <div className="flex items-center space-x-2">
+              <span className="text-gray-700 font-medium">{item.label}</span>
+              <FaInfoCircle className="text-gray-500 cursor-pointer hover:text-blue-600" />
+            </div>
+            <span className="text-xl font-semibold text-blue-600">
+              {item.value}
+            </span>
           </div>
+        ))}
+      </div>
+
+      {/* Buttons Section */}
+      <div className="space-y-3 mb-6">
+        <button type="submit" className="ud-btn btn-thm p-2 w-full">
+          Invest Now
+        </button>
+        <div className="text-center">
+          <span className="text-sm text-gray-600">BDT 10,000 minimum</span>
         </div>
       </div>
-      <div className="col-md-12 mt-3">
-        <div className="d-grid">
-          <div className="  ">
-            {/* Heading */}
-            <h3 className="text-sm font-semibold text-gray-700 mb-3">
-              For Any Inquiry
-            </h3>
 
-            {/* Name Section */}
-            <div className="flex items-center mb-2">
-              <FaUser className="text-gray-600 mr-2" size={16} />
-              <p className="text-sm text-gray-800">
-                <span className="font-medium">Name:</span> Md. Sajal Ali
-              </p>
-            </div>
+      {/* Inquiry Section */}
+      <div className="border-t pt-4">
+        <h3 className="text-lg font-semibold text-gray-800 mb-4">
+          For Any Inquiry
+        </h3>
+        <div className="space-y-3">
+          {/* Name */}
+          <div className="flex items-center space-x-3">
+            <FaUser className="text-gray-600" size={18} />
+            <p className="text-gray-800">
+              <span className="font-medium">Name:</span> Md. Sajal Ali
+            </p>
+          </div>
 
-            {/* Phone Section */}
-            <div className="flex items-center mb-3">
-              <FaPhone className="text-gray-600 mr-2" size={16} />
-              <p className="text-sm text-blue-600">
-                <span className="font-medium text-gray-800 ">Call:</span>{" "}
+          {/* Phone */}
+          <div className="flex items-center space-x-3">
+            <FaPhone className="text-gray-600" size={18} />
+            <p className="text-gray-800">
+              <span className="font-medium">Call:</span>{" "}
+              <a
+                href="tel:01896063449"
+                className="text-blue-600 hover:underline"
+              >
                 01896063449
-              </p>
-            </div>
-
-            {/* WhatsApp Button */}
-            <a
-              href="https://wa.me/01896063449"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center bg-green-500 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-green-600 transition"
-            >
-              <FaWhatsapp className="mr-2" size={16} />
-              WHATSAPP
-            </a>
+              </a>
+            </p>
           </div>
+
+          {/* WhatsApp */}
+          <a
+            href="https://wa.me/01896063449"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-full py-2 bg-green-500 text-white font-medium rounded-lg hover:bg-green-600 transition focus:outline-none focus:ring-2 focus:ring-green-400"
+          >
+            <FaWhatsapp className="mr-2" size={18} />
+            WhatsApp
+          </a>
         </div>
       </div>
-      {/* End .col-12 */}
-    </div>
+    </>
   );
 };
 
