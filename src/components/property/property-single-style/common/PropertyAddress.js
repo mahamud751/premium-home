@@ -27,7 +27,7 @@ const PropertyAddress = () => {
           key={index}
           className={`col-md-6 col-xl-4 ${index === 1 ? "offset-xl-2" : ""}`}
         >
-          <div className="d-flex justify-content-between">
+          {/* <div className="d-flex justify-content-between">
             <div className="pd-list">
               <p className="fw600 mb10 ff-heading dark-color">Address</p>
               <p className="fw600 mb10 ff-heading dark-color">City</p>
@@ -38,7 +38,7 @@ const PropertyAddress = () => {
               <p className="text mb10">{address.city}</p>
               <p className="text mb-0">{address.state}</p>
             </div>
-          </div>
+          </div> */}
         </div>
       ))}
       {/* End col */}

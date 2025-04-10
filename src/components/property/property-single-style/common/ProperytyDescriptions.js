@@ -46,7 +46,7 @@ const ProperytyDescriptions = () => {
               >
                 Documents
               </button>
-              <button
+              {/* <button
                 className="nav-link fw600"
                 id="nav-item4-tab"
                 data-bs-toggle="tab"
@@ -57,7 +57,7 @@ const ProperytyDescriptions = () => {
                 aria-selected="false"
               >
                 Market
-              </button>
+              </button> */}
               <button
                 className="nav-link fw600"
                 id="nav-item5-tab"
@@ -116,18 +116,17 @@ const ProperytyDescriptions = () => {
               </p>
 
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                <h4 className="title fz17 mb30 mt30">Address</h4>
+                {/* <h4 className="title fz17 mb30 mt30">Address</h4> */}
                 <div className="row">
                   <PropertyAddress />
                 </div>
               </div>
 
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
+              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <div className="row">
-                  {/* <AllComments /> */}
                   <AllReviews />
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div
