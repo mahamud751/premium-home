@@ -8,7 +8,7 @@ const PropertyHeader = ({ id }) => {
 
   return (
     <div className="container mx-auto py-6">
-      <div className="flex flex-col lg:flex-row lg:items-start gap-8">
+      <div className="flex flex-col lg:flex-row lg:items-start gap-4">
         {/* Left Section */}
         <div className="flex-1">
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
@@ -57,8 +57,8 @@ const PropertyHeader = ({ id }) => {
         </div>
 
         {/* Right Section */}
-        <div className="lg:w-80">
-          <div className="bg-indigo-50 rounded-xl p-6 sticky top-6">
+        <div className="lg:w-80 ">
+          <div className="bg-indigo-50 flex flex-col items-center justify-center lg:h-[250px] rounded-xl p-6 sticky top-6">
             {/* Price */}
             <div className="text-center mb-4">
               <h3 className="text-3xl font-bold text-indigo-700">
