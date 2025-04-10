@@ -3,6 +3,7 @@ import DefaultHeader from "@/components/common/DefaultHeader";
 import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import NearbySimilarProperty from "@/components/property/property-single-style/common/NearbySimilarProperty";
+import PropertyAddress from "@/components/property/property-single-style/common/PropertyAddress";
 import PropertyHeader from "@/components/property/property-single-style/common/PropertyHeader";
 import ProperytyDescriptions from "@/components/property/property-single-style/common/ProperytyDescriptions";
 import PropertyChart from "@/components/property/property-single-style/common/property-view/Property-Chart";
@@ -50,6 +51,9 @@ const SingleV1 = ({ params }) => {
 
               <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                 <ProperytyDescriptions />
+                <div className="mt-4">
+                  <PropertyAddress />
+                </div>
 
                 {/* End property description */}
               </div>

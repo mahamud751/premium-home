@@ -1,271 +1,221 @@
-import React from "react";
-import PropertyAddress from "./PropertyAddress";
-import AllReviews from "./reviews";
+"use client";
+import { useState } from "react";
 import Test from "./Test";
 
-const ProperytyDescriptions = () => {
+const PropertyDescriptions = () => {
+  const [activeTab, setActiveTab] = useState("item1");
+
+  const propertyData = {
+    details: {
+      landSize: "1,500 sqm",
+      livingSpace: "1,000 sqm",
+      jungleArea: "500 sqm",
+      bedrooms: 4,
+      poolLength: "16 meters",
+      completionDate: "April 2023",
+      leaseEnd: "May 1, 2053",
+      location: "North of Ubud Palace",
+    },
+    financials: {
+      investmentValue: "6,924,510,000 BDT",
+      assetPrice: "6,924,510,000 BDT",
+      notaryFee: "0.75%",
+      rtemisFee: "5%",
+      annualReturn: "13%",
+      rentalYield: "11%",
+      capitalAppreciation: "2%",
+    },
+  };
+
+  const tabs = [
+    { id: "item1", label: "Details" },
+    { id: "item2", label: "Financials" },
+    { id: "item3", label: "Documents" },
+    { id: "item5", label: "Timeline" },
+  ];
+
+  const handleTabClick = (tabId) => {
+    setActiveTab(tabId);
+  };
+
   return (
-    <>
-      <div className="col-md-12">
-        <div className="navtab-style1">
-          <nav>
-            <div className="nav nav-tabs mb20" id="nav-tab2" role="tablist">
-              <button
-                className="nav-link fw600 active"
-                id="nav-item1-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#nav-item1"
-                type="button"
-                role="tab"
-                aria-controls="nav-item1"
-                aria-selected="true"
-              >
-                Details
-              </button>
-              <button
-                className="nav-link fw600"
-                id="nav-item2-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#nav-item2"
-                type="button"
-                role="tab"
-                aria-controls="nav-item2"
-                aria-selected="false"
-              >
-                Financials
-              </button>
-              <button
-                className="nav-link fw600"
-                id="nav-item3-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#nav-item3"
-                type="button"
-                role="tab"
-                aria-controls="nav-item3"
-                aria-selected="false"
-              >
-                Documents
-              </button>
-              {/* <button
-                className="nav-link fw600"
-                id="nav-item4-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#nav-item4"
-                type="button"
-                role="tab"
-                aria-controls="nav-item4"
-                aria-selected="false"
-              >
-                Market
-              </button> */}
-              <button
-                className="nav-link fw600"
-                id="nav-item5-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#nav-item5"
-                type="button"
-                role="tab"
-                aria-controls="nav-item5"
-                aria-selected="false"
-              >
-                Timeline
-              </button>
-            </div>
-          </nav>
-          <div className="tab-content" id="nav-tabContent">
-            <div
-              className="tab-pane fade show active"
-              id="nav-item1"
-              role="tabpanel"
-              aria-labelledby="nav-item1-tab"
+    <div className="property-details-wrapper bg-white shadow-sm rounded-3 my-4">
+      {/* Navigation Tabs */}
+      <nav className="mb-4 px-3 pt-3">
+        <div
+          className="nav nav-pills flex-column flex-sm-row gap-2 justify-content-center"
+          id="nav-tab2"
+          role="tablist"
+        >
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              className={`nav-link fw-bold px-4 py-2 rounded-pill flex-grow-1 text-center ${
+                activeTab === tab.id
+                  ? "active bg-primary text-white"
+                  : "text-dark bg-light"
+              }`}
+              onClick={() => handleTabClick(tab.id)}
+              type="button"
+              role="tab"
+              aria-controls={`nav-${tab.id}`}
+              aria-selected={activeTab === tab.id}
             >
-              <h6>About the Property</h6>
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </nav>
 
-              <p className="text">
-                This property is set on 1,500 sqm of land and offers 1,000 sqm
-                of living space with 500 sqm of private jungle. The enclosed &
-                fully air-conditioned living area is light-flooded with large
-                glass panel windows and sliding doors and offers adjacent dining
-                to a fully equipped western kitchen. All 4 bedrooms enjoy a
-                spacious layout with inbuilt wardrobes and private en-suite
-                bathrooms. The highlight is a 16-meter-long infinity swimming
-                pool with a sunken poolside lounge and terrace with sun
-                loungers. Villa The Kayu was completed in April 2023. The villa
-                is built on 1,500 sqm of land with a leasehold that expires on
-                the 1st of May 2053 (~30 years). This new modern 4-bedroom villa
-                is conveniently located in a quiet residential area, centrally
-                located north of Ubud palace, which is only a short 5 minute
-                drive away from Ubud’s cultural centre and many cafes and
-                restaurants are nearby. This property is set on 1,500 sqm of
-                land and offers 1,000 sqm of living space with 500 sqm of
-                private jungle. The enclosed & fully air-conditioned living area
-                is light-flooded with large glass panel windows and sliding
-                doors and offers adjacent dining to a fully equipped western
-                kitchen. All 4 bedrooms enjoy a spacious layout with inbuilt
-                wardrobes and private en-suite bathrooms. The highlight is a
-                16-meter-long infinity swimming pool with a sunken poolside
-                lounge and terrace with sun loungers. This villa is a
-                commercially viable property with amenities and design features
-                that maximize rental yields while also possessing the
-                functionality and comforts of a home. It is perfectly suitable
-                for short-term rentals and people looking for longer-term stays.
-                Management: To optimize the returns, a professional management
-                company has been appointed to manage the villa. Exit strategy:
-                The villa will be sold once the leasehold reaches 25 years (May
-                2028)
+      {/* Tab Content */}
+      <div className="tab-content px-3 pb-3" id="nav-tabContent">
+        {/* Details Tab */}
+        <div
+          className={`tab-pane fade ${
+            activeTab === "item1" ? "show active" : ""
+          }`}
+          id="nav-item1"
+          role="tabpanel"
+          aria-labelledby="nav-item1-tab"
+        >
+          <div className="row g-4">
+            <div className="col-12 col-lg-8">
+              <h4 className="mb-3 fw-bold">About the Property</h4>
+              <p className="text-muted lh-lg">
+                Nestled on {propertyData.details.landSize} of land, this
+                luxurious villa offers {propertyData.details.livingSpace} of
+                modern living space and
+                {propertyData.details.jungleArea} of private jungle. Featuring
+                large glass panel windows, a fully equipped western kitchen, and
+                {propertyData.details.bedrooms} spacious bedrooms with en-suite
+                bathrooms, this property is a perfect blend of comfort and
+                style.
               </p>
-
-              <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                {/* <h4 className="title fz17 mb30 mt30">Address</h4> */}
-                <div className="row">
-                  <PropertyAddress />
-                </div>
-              </div>
-
-              {/* <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                <div className="row">
-                  <AllReviews />
-                </div>
-              </div> */}
-            </div>
-
-            <div
-              className="tab-pane fade"
-              id="nav-item2"
-              role="tabpanel"
-              aria-labelledby="nav-item2-tab"
-            >
-              <h5>Asset Value</h5>
-              <hr />
-              <div className="row">
-                <div className="col-lg-4">
-                  <h6>Total Investment value :</h6>
-                </div>
-                <div className="col-lg-4">
-                  <h6>BDT</h6>
-                </div>
-                <div className="col-lg-4">
-                  <h6>6,924510,000</h6>
-                </div>
-              </div>
-              <hr />
-              <div className="row">
-                <div className="col-lg-4">
-                  <h6>Underlying asset price :</h6>
-                </div>
-                <div className="col-lg-4">
-                  <h6>BDT</h6>
-                </div>
-                <div className="col-lg-4">
-                  <h6>6,924510,000</h6>
-                </div>
-              </div>
-              <hr />
-              <div className="row">
-                <div className="col-lg-4">
-                  <h6>Notary fee (0.75%) :</h6>
-                </div>
-                <div className="col-lg-4">
-                  <h6>BDT</h6>
-                </div>
-                <div className="col-lg-4">
-                  <h6>6,924510,000</h6>
-                </div>
-              </div>
-              <hr />
-              <div className="row">
-                <div className="col-lg-4">
-                  <h6>Rtemis fee (5%):</h6>
-                </div>
-                <div className="col-lg-4">
-                  <h6>BDT</h6>
-                </div>
-                <div className="col-lg-4">
-                  <h6>6,924510,000</h6>
-                </div>
-              </div>
-              <h5>Annual Return</h5>
-              <hr />
-              <div className="row">
-                <div className="col-lg-7">
-                  <h6>Total annual return :</h6>
-                </div>
-                <div className="col-lg-5">
-                  <h6>13%</h6>
-                </div>
-              </div>
-              <hr />
-              <div className="row">
-                <div className="col-lg-7">
-                  <h6>Project annual rental yield :</h6>
-                </div>
-                <div className="col-lg-5">
-                  <h6>11%</h6>
-                </div>
-              </div>
-              <hr />
-              <div className="row">
-                <div className="col-lg-7">
-                  <h6>Project annual capital appreciation :</h6>
-                </div>
-                <div className="col-lg-5">
-                  <h6>2%</h6>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div
-              className="tab-pane fade"
-              id="nav-item3"
-              role="tabpanel"
-              aria-labelledby="nav-item3-tab"
-            >
-              {" "}
-              Villa The Kayu was completed in April 2023. The villa is built on
-              1,500 sqm of land with a leasehold that expires on the 1st of May
-              2053 (~30 years). This new modern 4-bedroom villa is conveniently
-              located in a quiet residential area, centrally located north of
-              Ubud palace, which is only a short 5 minute drive away from Ubud’s
-              cultural centre and many cafes and restaurants are nearby.
-            </div>
-            <div
-              className="tab-pane fade"
-              id="nav-item4"
-              role="tabpanel"
-              aria-labelledby="nav-item4-tab"
-            >
-              <h6>About the market:</h6>
-              <p>
-                The Bali property market is one of the most sought-after when it
-                comes to property investment. Now that the pandemic is well
-                behind us, property investors can look forward to increasing
-                demand, which will continue to grow along with the number of
-                tourists that visit the island.
-              </p>
-              <h6>About Ubud:</h6>
-              <p>
-                The Ubud property market in Bali, has been an attractive
-                destination for property investment for many years. Ubud is
-                known for its stunning natural beauty, rich cultural heritage,
-                and serene environment, which has drawn both local and
-                international tourists to the area. Ubud has experienced a
-                steady demand for properties due to its popularity among
-                tourists, artists, and those seeking a tranquil lifestyle
+              <p className="text-muted">
+                The centerpiece is a {propertyData.details.poolLength}
+                -long infinity swimming pool with a sunken lounge area.
+                Completed in
+                {propertyData.details.completionDate}, located just 5 minutes
+                from Ubud’s cultural center with lease until{" "}
+                {propertyData.details.leaseEnd}.
               </p>
             </div>
-            <div
-              className="tab-pane fade"
-              id="nav-item5"
-              role="tabpanel"
-              aria-labelledby="nav-item5-tab"
-            >
-              <Test />
+            <div className="col-12 col-lg-4">
+              <div className="property-specs p-3 bg-light rounded-3">
+                <h5 className="mb-3">Quick Specs</h5>
+                <ul className="list-unstyled">
+                  <li className="mb-2">
+                    <strong>Land:</strong> {propertyData.details.landSize}
+                  </li>
+                  <li className="mb-2">
+                    <strong>Living:</strong> {propertyData.details.livingSpace}
+                  </li>
+                  <li className="mb-2">
+                    <strong>Bedrooms:</strong> {propertyData.details.bedrooms}
+                  </li>
+                  <li className="mb-2">
+                    <strong>Pool:</strong> {propertyData.details.poolLength}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Financials Tab */}
+        <div
+          className={`tab-pane fade ${
+            activeTab === "item2" ? "show active" : ""
+          }`}
+          id="nav-item2"
+          role="tabpanel"
+          aria-labelledby="nav-item2-tab"
+        >
+          <div className="row g-4">
+            <div className="col-12 col-md-6">
+              <div className="financial-card p-3 p-md-4 bg-light rounded-3">
+                <h5 className="mb-4 fw-bold">Asset Value</h5>
+                <div className="d-flex flex-column gap-3">
+                  <div className="d-flex justify-content-between">
+                    <span>Total Investment:</span>
+                    <span>{propertyData.financials.investmentValue}</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Asset Price:</span>
+                    <span>{propertyData.financials.assetPrice}</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Notary Fee:</span>
+                    <span>{propertyData.financials.notaryFee}</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Rtemis Fee:</span>
+                    <span>{propertyData.financials.rtemisFee}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="financial-card p-3 p-md-4 bg-light rounded-3">
+                <h5 className="mb-4 fw-bold">Annual Returns</h5>
+                <div className="d-flex flex-column gap-3">
+                  <div className="d-flex justify-content-between">
+                    <span>Total Return:</span>
+                    <span className="text-success fw-bold">
+                      {propertyData.financials.annualReturn}
+                    </span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Rental Yield:</span>
+                    <span>{propertyData.financials.rentalYield}</span>
+                  </div>
+                  <div className="d-flex justify-content-between">
+                    <span>Capital Appreciation:</span>
+                    <span>{propertyData.financials.capitalAppreciation}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Documents Tab */}
+        <div
+          className={`tab-pane fade ${
+            activeTab === "item3" ? "show active" : ""
+          }`}
+          id="nav-item3"
+          role="tabpanel"
+          aria-labelledby="nav-item3-tab"
+        >
+          <div className="documents-section p-3 p-md-4 bg-light rounded-3">
+            <h5 className="mb-3 fw-bold">Property Documents</h5>
+            <p className="text-muted">
+              Villa completed: {propertyData.details.completionDate}
+              <br />
+              Land size: {propertyData.details.landSize}
+              <br />
+              Leasehold expires: {propertyData.details.leaseEnd}
+              <br />
+              Location: {propertyData.details.location}
+            </p>
+          </div>
+        </div>
+
+        {/* Timeline Tab */}
+        <div
+          className={`tab-pane fade ${
+            activeTab === "item5" ? "show active" : ""
+          }`}
+          id="nav-item5"
+          role="tabpanel"
+          aria-labelledby="nav-item5-tab"
+        >
+          <Test />
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default ProperytyDescriptions;
+export default PropertyDescriptions;
