@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FaCalendar, FaShareAlt, FaTag, FaUser } from "react-icons/fa";
 import BlogComment from "./BlogComment";
+import RelatedBlogs from "./RelatedBlogs";
 
 function BlogContent() {
   return (
@@ -105,7 +106,7 @@ function BlogContent() {
                 </h3>
                 <div className="flex items-center gap-4">
                   <Image
-                    src="/images/our-teams/attorney_one.png"
+                    src="http://localhost:3000/_next/image?url=%2Fimages%2Fblog%2Fblog-1.jpg&w=640&q=75"
                     alt="Author"
                     width={64}
                     height={64}
@@ -147,58 +148,7 @@ function BlogContent() {
         </div>
 
         {/* Related Posts */}
-        <div className="my-12">
-          <h2 className="text-2xl font-bold text-gray-900 md:mb-6">
-            Related Articles
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Top 5 Neighborhoods to Watch in 2025",
-                image: "/images/blog/blog-1.jpg",
-                excerpt:
-                  "Explore the hottest neighborhoods for real estate investment this year.",
-              },
-              {
-                title: "How to Sell Your Home Fast",
-                image: "/images/blog/blog-1.jpg",
-                excerpt:
-                  "Learn expert strategies to prepare and market your home for a quick sale.",
-              },
-              {
-                title: "Renting vs. Buying: What’s Right for You?",
-                image: "/images/blog/blog-1.jpg",
-                excerpt:
-                  "A detailed comparison to help you make the best housing decision.",
-              },
-            ].map((post, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-md overflow-hidden"
-              >
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mt-2">{post.excerpt}</p>
-                  <a
-                    href="#"
-                    className="mt-4 inline-block text-blue-600 font-semibold hover:underline"
-                  >
-                    Read More
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <RelatedBlogs />
       </div>
     </section>
   );
