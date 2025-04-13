@@ -16,7 +16,7 @@ function BlogContent() {
             className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-lg shadow-md"
             priority
           />
-          <div className="mt-6">
+          <div className="md:mt-6">
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               The Ultimate Guide to Buying Your Dream Home in 2025
             </h1>
@@ -40,9 +40,9 @@ function BlogContent() {
         {/* Main Content Area */}
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Blog Content */}
-          <article className="lg:w-2/3">
+          <article className="lg:w-2/3 ">
             <div className="prose prose-lg max-w-none text-gray-700">
-              <p className="lead text-xl mb-6">
+              <p className="lead text-xl md:mb-6 mt-2 md:mt-0">
                 Discover expert tips and strategies to navigate the real estate
                 market and find your perfect home this year.
               </p>
@@ -204,7 +204,7 @@ function BlogContent() {
 
         {/* Related Posts */}
         <div className="my-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 md:mb-6">
             Related Articles
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
