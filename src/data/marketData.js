@@ -1,7 +1,8 @@
 module.exports = [
   {
     id: 1,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760125038-06564d0a4568?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "New York",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -31,7 +32,8 @@ module.exports = [
   },
   {
     id: 2,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760180239-ef05b25dd5ad?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Rego Park",
     city: "Los Angeles",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -63,7 +65,8 @@ module.exports = [
   },
   {
     id: 3,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760125497-cd51a05afc6c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "Texas",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -94,7 +97,8 @@ module.exports = [
   },
   {
     id: 4,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760125434-f6cff2d230aa?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "New Jersey",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -126,7 +130,8 @@ module.exports = [
   },
   {
     id: 5,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760125031-62a1611f02db?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "San Diego",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -157,7 +162,8 @@ module.exports = [
   },
   {
     id: 6,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760125474-0cf0d3aac257?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "San Diego",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -188,7 +194,8 @@ module.exports = [
   },
   {
     id: 7,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760125038-06564d0a4568?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "San Diego",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -219,7 +226,8 @@ module.exports = [
   },
   {
     id: 8,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760125490-03baa289cf2b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "San Diego",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -250,7 +258,8 @@ module.exports = [
   },
   {
     id: 9,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733864822289-16f382c9c0bf?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "San Diego",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -281,7 +290,8 @@ module.exports = [
   },
   {
     id: 10,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733864822242-3cf656f3e18e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "San Diego",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -312,7 +322,8 @@ module.exports = [
   },
   {
     id: 11,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760125440-e20199e6dc11?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "San Diego",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -343,7 +354,8 @@ module.exports = [
   },
   {
     id: 12,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760125490-03baa289cf2b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "San Diego",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -374,7 +386,8 @@ module.exports = [
   },
   {
     id: 13,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760124961-f99f8ecdfae8?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "San Diego",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -405,7 +418,8 @@ module.exports = [
   },
   {
     id: 14,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1733760180239-ef05b25dd5ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D",
     title: "Luxury villa in Dhanmondi",
     city: "San Diego",
     location: "Dhanmondi 03, Dhaka-1209",

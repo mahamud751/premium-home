@@ -218,7 +218,7 @@ const ProperteyFiltering = () => {
   }, [filteredData, currentSortingOption]);
 
   return (
-    <section className="pt0 pb90 ">
+    <section className="pt0 pb90 bg-red ">
       <div className="container">
         {/* start mobile filter sidebar */}
         <div
