@@ -10,7 +10,7 @@ function BlogContent() {
         {/* Hero Section */}
         <div className="mb-8">
           <Image
-            src="/images/background/compare-bg.jpg"
+            src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dg"
             alt="Blog hero"
             width={1200}
             height={600}
@@ -55,7 +55,7 @@ function BlogContent() {
                 time to invest in a property.
               </p>
               <Image
-                src="/images/blog/blog-1.jpg"
+                src="https://plus.unsplash.com/premium_photo-1733760125447-a363befe9aab?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Property example"
                 width={600}
                 height={400}
@@ -106,7 +106,7 @@ function BlogContent() {
                 </h3>
                 <div className="flex items-center gap-4">
                   <Image
-                    src="http://localhost:3000/_next/image?url=%2Fimages%2Fblog%2Fblog-1.jpg&w=640&q=75"
+                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
                     alt="Author"
                     width={64}
                     height={64}

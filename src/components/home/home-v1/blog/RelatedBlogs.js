@@ -12,21 +12,24 @@ function RelatedBlogs() {
           {
             id: 4,
             title: "Top 5 Neighborhoods to Watch in 2025",
-            image: "/images/blog/blog-1.jpg",
+            image:
+              "https://plus.unsplash.com/premium_photo-1733760125031-62a1611f02db?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             excerpt:
               "Explore the hottest neighborhoods for real estate investment this year.",
           },
           {
             id: 5,
             title: "How to Sell Your Home Fast",
-            image: "/images/blog/blog-1.jpg",
+            image:
+              "https://plus.unsplash.com/premium_photo-1733760125492-79e79605f623?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             excerpt:
               "Learn expert strategies to prepare and market your home for a quick sale.",
           },
           {
             id: 6,
             title: "Renting vs. Buying: What’s Right for You?",
-            image: "/images/blog/blog-1.jpg",
+            image:
+              "https://plus.unsplash.com/premium_photo-1733760125447-a363befe9aab?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             excerpt:
               "A detailed comparison to help you make the best housing decision.",
           },

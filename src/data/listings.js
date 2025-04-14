@@ -1,7 +1,8 @@
 module.exports = [
   {
     id: 1,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1734545294065-1a880b47b928?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "New York",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -31,7 +32,8 @@ module.exports = [
   },
   {
     id: 2,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D",
     title: "Luxury villa in Rego Park",
     city: "Los Angeles",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -63,7 +65,8 @@ module.exports = [
   },
   {
     id: 3,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "Texas",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -94,7 +97,8 @@ module.exports = [
   },
   {
     id: 4,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1734545294065-1a880b47b928?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "New Jersey",
     location: "Dhanmondi 03, Dhaka-1209",
@@ -126,7 +130,8 @@ module.exports = [
   },
   {
     id: 5,
-    image: "/images/listings/propertyImage1.png",
+    image:
+      "https://plus.unsplash.com/premium_photo-1734545294090-05af7624c1e0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Luxury villa in Dhanmondi",
     city: "San Diego",
     location: "Dhanmondi 03, Dhaka-1209",

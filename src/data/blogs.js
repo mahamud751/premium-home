@@ -1,7 +1,8 @@
 export const blogs = [
   {
     id: 1,
-    image: "/images/blog/blog-1.jpg",
+    image:
+      "https://images.pexels.com/photos/4476374/pexels-photo-4476374.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     date: {
       month: "July",
       day: "28",
@@ -11,7 +12,8 @@ export const blogs = [
   },
   {
     id: 2,
-    image: "/images/blog/blog-2.jpg",
+    image:
+      "https://images.pexels.com/photos/1766604/pexels-photo-1766604.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 
     date: {
       month: "July",
@@ -22,7 +24,8 @@ export const blogs = [
   },
   {
     id: 3,
-    image: "/images/blog/blog-3.jpg",
+    image:
+      "https://images.pexels.com/photos/4240571/pexels-photo-4240571.jpeg?auto=compress&cs=tinysrgb&w=600",
     date: {
       month: "July",
       day: "28",
