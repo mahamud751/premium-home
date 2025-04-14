@@ -12,6 +12,9 @@
 // };
 
 /** @type {import('next').NextConfig} */
+// next.config.js
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     domains: ["localhost"],
@@ -24,4 +27,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
