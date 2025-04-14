@@ -11,7 +11,6 @@
 //   },
 // };
 
-/** @type {import('next').NextConfig} */
 // next.config.js
 
 /** @type {import('next').NextConfig} */
