@@ -192,52 +192,60 @@ module.exports = [
   {
     id: 30,
     name: "California",
-    image: "/images/listings/cp-s-14.png",
+    image:
+      "https://media.istockphoto.com/id/488120139/photo/modern-real-estate.jpg?s=612x612&w=0&k=20&c=88jk1VLSoYboMmLUx173sHs_XrZ9pH21as8lC7WINQs=",
     propertyCount: 12,
     forRent: true,
   },
   {
     id: 31,
     name: "New Jersey",
-    image: "/images/listings/cp-s-15.png",
+    image:
+      "https://media.onthemarket.com/properties/16719532/1536543959/image-0-480x320.jpg",
     propertyCount: 12,
   },
   {
     id: 32,
     name: "Manhattan",
-    image: "/images/listings/cp-s-16.png",
+    image:
+      "https://mr0.homeflow-assets.co.uk/files/photo/image/43008/5138/652x/RHS240027_16.jpg",
     propertyCount: 15,
     forRent: true,
   },
   {
     id: 33,
     name: "San Diego",
-    image: "/images/listings/cp-s-17.png",
+    image:
+      "https://rocket.com/homes/listing-images/45866257_S0020/S0020/S0020-R0100/NWM2352232/NWM148786616.jpg?version=1743802816&width=640",
     propertyCount: 21,
     forRent: true,
   },
   {
     id: 34,
     name: "San Francisco",
-    image: "/images/listings/cp-s-18.png",
+    image:
+      "https://rocket.com/homes/listing-images/45866257_S0020/S0020/S0020-R0100/NWM2357946/NWM149087127.jpg?version=1744267065&width=640",
     propertyCount: 11,
   },
   {
     id: 35,
     name: "San Diego",
-    image: "/images/listings/cp-s-19.png",
+    image:
+      "https://media.istockphoto.com/id/1320991884/photo/aerial-view-of-residential-distratic-at-major-mackenzie-dr-and-islinton-ave-detached-and.jpg?s=612x612&w=0&k=20&c=KY59fkCfg9zz9LkQRCRDn84j9xcNdG7NSgZ3jGJC81A=",
     propertyCount: 12,
   },
   {
     id: 36,
     name: "San Diego",
-    image: "/images/listings/cp-s-15.png",
+    image:
+      "https://storeys.com/media-library/homes-in-a-suburban-neighbourhood-in-the-gta.jpg?id=34015780&width=800&height=187&quality=90",
     propertyCount: 12,
   },
   {
     id: 37,
     name: "San Diego",
-    image: "/images/listings/cp-s-14.png",
+    image:
+      "https://img.freepik.com/free-photo/analog-landscape-city-with-buildings_23-2149661456.jpg",
     propertyCount: 14,
   },
 ];

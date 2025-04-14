@@ -1,15 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-module.exports = {
+const nextConfig = {
   images: {
-    domains: [
-      "res.cloudinary.com",
-      "i.ibb.co",
-      "http",
-      "http://",
-      "localhost",
-      "investment-server-om2a.onrender.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
     ],
   },
 };
+
+export default nextConfig;
