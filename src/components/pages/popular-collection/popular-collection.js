@@ -1,11 +1,11 @@
 "use client";
 
+import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-thumbnail.css";
 import "lightgallery/css/lg-video.css";
-import "lightgallery/css/lightgallery.css";
+import LightGallery from "lightgallery/react";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgVideo from "lightgallery/plugins/video";
-import LightGallery from "lightgallery/react";
 import { useCallback, useRef } from "react";
 
 const PopularCollection = () => {
@@ -15,26 +15,30 @@ const PopularCollection = () => {
     {
       category: "Luxury Collection",
       location: "Dhaka",
-      thumbnail: "/images/about/about-3.jpg",
-      videoUrl: "https://youtu.be/TDGgyVwF9qc?si=RI6ZFr9HEhnF3Nst",
+      thumbnail:
+        "https://plus.unsplash.com/premium_photo-1733760180239-ef05b25dd5ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D",
+      videoUrl: "https://www.youtube.com/watch?v=4jnzf1yj48M",
     },
     {
       category: "Classic Collection",
       location: "Rajshahi",
-      thumbnail: "/images/about/about-3.jpg",
-      videoUrl: "https://youtu.be/TDGgyVwF9qc?si=RI6ZFr9HEhnF3Nst",
+      thumbnail:
+        "https://plus.unsplash.com/premium_photo-1733760125447-a363befe9aab?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      videoUrl: "https://www.youtube.com/watch?v=TDGgyVwF9qc",
     },
     {
       category: "Wellness Communities",
       location: "Chapainawabganj",
-      thumbnail: "/images/about/about-3.jpg",
-      videoUrl: "https://youtu.be/TDGgyVwF9qc?si=RI6ZFr9HEhnF3Nst",
+      thumbnail:
+        "https://plus.unsplash.com/premium_photo-1733760125474-0cf0d3aac257?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      videoUrl: "https://www.youtube.com/watch?v=TDGgyVwF9qc",
     },
     {
       category: "Commercial Collection",
       location: "Bougra",
-      thumbnail: "/images/about/about-3.jpg",
-      videoUrl: "https://youtu.be/TDGgyVwF9qc?si=RI6ZFr9HEhnF3Nst",
+      thumbnail:
+        "https://plus.unsplash.com/premium_photo-1733760125440-e20199e6dc11?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      videoUrl: "https://www.youtube.com/watch?v=TDGgyVwF9qc",
     },
   ];
 
@@ -54,13 +58,10 @@ const PopularCollection = () => {
         <LightGallery
           onInit={onInit}
           plugins={[lgVideo, lgThumbnail]}
-          licenseKey="your-license-key"
           speed={500}
           download={false}
-          videojs={true}
           youtubePlayerParams={{
             modestbranding: 1,
-            showinfo: 0,
             rel: 0,
           }}
           elementClassNames="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6"
@@ -69,15 +70,14 @@ const PopularCollection = () => {
             <a
               key={index}
               className="relative group cursor-pointer"
-              data-lg-size="1280-720"
-              data-video={`{"source": [{"src":"${collection.videoUrl}", "type":"video/mp4"}], "attributes": {"preload": false, "controls": true}}`}
+              data-src={collection.videoUrl}
               data-sub-html={`<h4>${collection.category}</h4><p>${collection.location}</p>`}
             >
               <div className="flex items-center justify-between gap-2 mb-2">
                 <h3 className="text-lg font-semibold uppercase">
                   {collection.category}
                 </h3>
-                <p className="text-sm border rounded px-3  py-1    uppercase">
+                <p className="text-sm border rounded px-3 py-1 uppercase">
                   {collection.location}
                 </p>
               </div>
@@ -85,7 +85,7 @@ const PopularCollection = () => {
                 <img
                   src={collection.thumbnail}
                   alt={collection.category}
-                  className="w-full h-48 sm:h-64 object-cover rounded-lg grayscale"
+                  className="w-full h-48 sm:h-64 object-cover rounded-lg"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity">
                   <div className="bg-black bg-opacity-50 rounded-full p-4">
