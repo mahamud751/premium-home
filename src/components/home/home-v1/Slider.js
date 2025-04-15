@@ -64,7 +64,7 @@ const Slider = () => {
       <div className={styles.slide}>
         {items.map((item, index) => (
           <div
-            key={item.name} // Use a unique key
+            key={item.name}
             className={styles.item}
             style={{
               background: `url('${item.image}')`,
@@ -83,11 +83,11 @@ const Slider = () => {
       </div>
       <div className={styles.button}>
         <button onClick={handlePrev} className={styles.prev}>
-          <i className="fa-solid fa-arrow-left"></i>
+          <i className="fa-solid fa-arrow-left bg-white hover:text-black px-2 rounded"></i>
         </button>{" "}
         &nbsp;
         <button onClick={handleNext} className={styles.next}>
-          <i className="fa-solid fa-arrow-right"></i>
+          <i className="fa-solid fa-arrow-right bg-white px-2 rounded hover:text-black"></i>
         </button>
       </div>
     </div>

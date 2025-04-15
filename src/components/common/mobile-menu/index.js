@@ -27,12 +27,12 @@ const MobileMenu = () => {
                 />
               </a>
               <Link className="mobile_logo" href="/">
-                <Image
+                {/* <Image
                   width={138}
                   height={44}
                   src="/images/header-logo2.svg"
                   alt="logo"
-                />
+                /> */}
               </Link>
               <Link href="/login">
                 <span className="icon fz18 far fa-user-circle" />
@@ -59,7 +59,7 @@ const MobileMenu = () => {
             >
               <span className="far fa-times"></span>
             </div>
-            <h4 className="title">Welcome to Homez</h4>
+            <h4 className="title">Premium Home</h4>
           </div>
           {/* End header */}
 

@@ -29,12 +29,12 @@ const Invoice = () => {
                     <div className="col-lg-7">
                       <div className="main_logo mb30-md">
                         <Link href="/">
-                          <Image
+                          {/* <Image
                             width={138}
                             height={44}
                             src="/images/header-logo2.svg"
                             alt="header-logo2"
-                          />
+                          /> */}
                         </Link>
                       </div>
                     </div>
