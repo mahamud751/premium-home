@@ -7,36 +7,42 @@ const initialItems = [
     name: "Switzerland",
     description:
       "Renowned for its breathtaking Alpine scenery and precision in craftsmanship",
-    image: "https://i.postimg.cc/g0W4qN2y/Switzerland.jpg",
+    image:
+      "https://images.unsplash.com/photo-1697659902121-1ec9e3728dce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Finland",
     description: "Known for its saunas, lakes, and a deep connection to nature",
-    image: "https://i.postimg.cc/DZfgR0s8/Finland.jpg",
+    image:
+      "https://images.unsplash.com/photo-1716943958117-d69db5715ca1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Iceland",
     description:
       "Famous for its stunning geothermal landscapes, waterfalls, and glaciers",
-    image: "https://i.postimg.cc/kX2jn2HS/Iceland.jpg",
+    image:
+      "https://images.unsplash.com/photo-1624715479776-c03fff721106?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Australia",
     description:
       "Distinguished by its diverse ecosystems, ranging from beaches to bushland",
-    image: "https://i.postimg.cc/05WWRYVx/Australia.jpg",
+    image:
+      "https://plus.unsplash.com/premium_photo-1741756092543-76fef837e30b?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Netherland",
     description:
       "Characterized by its iconic canals, tulip fields, and windmills",
-    image: "https://i.postimg.cc/dtg5DqMx/Netherland.jpg",
+    image:
+      "https://images.unsplash.com/photo-1618179452798-125f6706ba56?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Ireland",
     description:
       "Known for its lush green landscapes and rich cultural heritage",
-    image: "https://i.postimg.cc/sDGJktB9/Ireland.jpg",
+    image:
+      "https://images.unsplash.com/photo-1627136711221-62704f4a2cd7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
