@@ -11,11 +11,9 @@ export default function AboutContent() {
     <div className="bg-white text-gray-800 dark:bg-gray-900 dark:text-white">
       <section className="px-6 py-16 max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-6 text-center">About Us</h1>
-        <p className="text-lg text-center max-w-2xl mx-auto mb-12">
-          At Skyline Estates, we turn your dream spaces into reality. With
-          decades of combined experience, our mission is to deliver not just
-          properties, but lifelong value through exceptional real estate
-          service.
+        <p className="text-lg text-center max-w-2xl mx-auto mb-12 text-gray-800">
+          The Premium Homes Ltd is a real estate and land development company
+          dedicated to providing unparalleled property solutions to its clients
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -42,7 +40,7 @@ export default function AboutContent() {
             >
               <Icon className="w-12 h-12 mx-auto mb-4 text-blue-600" />
               <h2 className="text-xl font-semibold mb-2">{title}</h2>
-              <p>{desc}</p>
+              <p className="text-gray-800">{desc}</p>
             </div>
           ))}
         </div>
@@ -70,10 +68,8 @@ export default function AboutContent() {
             className="w-full lg:w-1/2 rounded-2xl shadow-lg object-cover"
           />
           <div>
-            <h2 className="text-3xl font-bold mb-4">
-              Why Choose Skyline Estates?
-            </h2>
-            <p className="mb-4">
+            <h2 className="text-3xl font-bold mb-4">The Premium Homes Ltd?</h2>
+            <p className="mb-4 text-gray-800">
               We're not just another real estate agency — we’re your trusted
               advisors. With deep market insight and an unwavering commitment to
               integrity, our team ensures a seamless and rewarding experience.
@@ -88,7 +84,7 @@ export default function AboutContent() {
               ].map((text, idx) => (
                 <li key={idx} className="flex items-center text-base">
                   <FaCheckCircle className="text-green-500 mr-2" />{" "}
-                  <span className="text-green-300">{text}</span>
+                  <span className="text-gray-700">{text}</span>
                 </li>
               ))}
             </ul>
