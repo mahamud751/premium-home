@@ -22,7 +22,15 @@ const About = () => {
       {/* End Mobile Nav  */}
 
       {/* Breadcrumb Sections */}
-      <section className="breadcumb-section2 p-0">
+      <section
+        className="breadcumb-section2 p-0"
+        style={{
+          backgroundImage: "url(/img/1.jpg",
+          height: "600px",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
