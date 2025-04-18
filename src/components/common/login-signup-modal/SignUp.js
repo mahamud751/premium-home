@@ -30,12 +30,12 @@ const SignUp = () => {
           Create account <i className="fal fa-arrow-right-long" />
         </button>
       </div>
-      <div className="hr_content mb20">
+      {/* <div className="hr_content mb20">
         <hr />
         <span className="hr_top_text">OR</span>
-      </div>
+      </div> */}
 
-      <div className="d-grid mb10">
+      {/* <div className="d-grid mb10">
         <button className="ud-btn btn-white" type="button">
           <i className="fab fa-google" /> Continue Google
         </button>
@@ -49,13 +49,13 @@ const SignUp = () => {
         <button className="ud-btn btn-apple" type="button">
           <i className="fab fa-apple" /> Continue Apple
         </button>
-      </div>
-      <p className="dark-color text-center mb0 mt10">
+      </div> */}
+      {/* <p className="dark-color text-center mb0 mt10">
         Already Have an Account?{" "}
         <Link className="dark-color fw600" href="/login">
           Login
         </Link>
-      </p>
+      </p> */}
     </form>
   );
 };

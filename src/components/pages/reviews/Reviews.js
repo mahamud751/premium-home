@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Reviews = () => {
   return (
     <div className="w-full ">
@@ -13,9 +15,11 @@ const Reviews = () => {
       <div className="flex flex-col md:flex-row w-full">
         {/* Customer Reviews */}
         <div className="w-full md:w-1/2 relative group overflow-hidden">
-          <img
-            src="https://i.postimg.cc/DZfgR0s8/Finland.jpg"
+          <Image
+            src="/img/1.jpg"
             alt="Customer Reviews"
+            width={1000}
+            height={1000}
             className="w-full h-[300px] md:h-[500px] object-cover filter grayscale transition-transform duration-500 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/60">
@@ -30,7 +34,7 @@ const Reviews = () => {
         {/* Landowner Reviews */}
         <div className="w-full md:w-1/2 relative group overflow-hidden">
           <img
-            src="https://i.postimg.cc/05WWRYVx/Australia.jpg"
+            src="/img/3.jpg"
             alt="Landowner Reviews"
             className="w-full h-[300px] md:h-[500px] object-cover filter grayscale transition-transform duration-500 group-hover:scale-110"
           />

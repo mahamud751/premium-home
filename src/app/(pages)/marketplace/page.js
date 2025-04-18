@@ -6,7 +6,7 @@ import MarketBanner from "@/components/home/home-v1/MarketBanner";
 import ProperteyFiltering from "@/components/listing/PropertyFiltering";
 
 export const metadata = {
-  title: "Gird Full 3 Column || Homez - Real Estate NextJS Template",
+  title: "The Premium Homes Ltd",
 };
 
 const Market = () => {

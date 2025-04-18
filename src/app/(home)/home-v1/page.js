@@ -19,7 +19,7 @@ import Link from "next/link";
 import Blog from "@/components/home/home-v1/Blog";
 
 export const metadata = {
-  title: "Home v1 || Homez - Real Estate NextJS Template",
+  title: "The Premium Homes Ltd",
 };
 
 const Home_V1 = () => {
@@ -39,7 +39,7 @@ const Home_V1 = () => {
       {/* End Home Banner Style V1 */}
 
       {/* Explore Apartment */}
-      <section
+      {/* <section
         className="pt0 pb90 pb10-md pt-5"
         style={{
           backgroundColor: "white",
@@ -61,13 +61,12 @@ const Home_V1 = () => {
               </div>
             </div>
           </div>
-          {/* End .row */}
 
           <div className="row">
             <Explore />
           </div>
         </div>
-      </section>
+      </section> */}
       {/* End Explore Apartment */}
       <section className="pb40-md pb90">
         <div className="container">

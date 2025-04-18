@@ -5,7 +5,7 @@ import MobileMenu from "@/components/common/mobile-menu";
 import Blog from "@/components/home/home-v1/Blog";
 
 export const metadata = {
-  title: "Blogs  || Homez - Real Estate NextJS Template",
+  title: "Blogs  || The Premium Homes Ltd",
 };
 
 const Blogs = () => {

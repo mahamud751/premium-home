@@ -5,7 +5,7 @@ import MobileMenu from "@/components/common/mobile-menu";
 import FaqContent from "@/components/pages/faq/FaqContent";
 
 export const metadata = {
-  title: "Faq  || Homez - Real Estate NextJS Template",
+  title: "Faq  || The Premium Homes Ltd",
 };
 
 const Faq = () => {

@@ -50,7 +50,7 @@ const SignIn = () => {
         <span className="hr_top_text">OR</span>
       </div>
 
-      <div className="d-grid mb10">
+      {/* <div className="d-grid mb10">
         <button className="ud-btn btn-white" type="button">
           <i className="fab fa-google" /> Continue Google
         </button>
@@ -64,13 +64,13 @@ const SignIn = () => {
         <button className="ud-btn btn-apple" type="button">
           <i className="fab fa-apple" /> Continue Apple
         </button>
-      </div>
-      <p className="dark-color text-center mb0 mt10">
+      </div> */}
+      {/* <p className="dark-color text-center mb0 mt10">
         Not signed up?{" "}
         <Link className="dark-color fw600" href="/register">
           Create an account.
         </Link>
-      </p>
+      </p> */}
     </form>
   );
 };

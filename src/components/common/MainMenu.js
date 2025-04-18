@@ -121,14 +121,14 @@ const MainMenu = () => {
       {/* End listings */}
 
       <li className="visible_list dropitem">
-        <a className="list-item" href="/faq">
+        <Link className="list-item" href="/faq">
           <span
             className={topMenu == "property" ? "title menuActive" : "title"}
           >
             Faq
           </span>
           {/* <span className="arrow"></span> */}
-        </a>
+        </Link>
         {/* <ul className="sub-menu">
           {propertyItems.map((item, index) => (
             <li key={index} className="dropitem">
