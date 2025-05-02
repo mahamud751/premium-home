@@ -5,94 +5,84 @@ import React from "react";
 
 const PropertyHeader = ({ id }) => {
   const data = listings.filter((elm) => elm.id == id)[0] || listings[0];
-
   return (
-    <div className="container mx-auto py-6">
-      <div className="flex flex-col lg:flex-row lg:items-start gap-4">
-        {/* Left Section */}
-        <div className="flex-1">
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-              {data.title}
-            </h2>
-
-            {/* Location and Status */}
-            <div className="flex flex-wrap gap-4 mb-4">
-              <span className="flex items-center text-gray-600 text-sm">
-                <i className="fas fa-map-marker-alt mr-2 text-indigo-500" />
-                {data.location}
-              </span>
-              <span className="flex items-center text-gray-600 text-sm">
-                <i className="fas fa-tag mr-2 text-indigo-500" />
-                For {data.forRent ? "rent" : "sale"}
-              </span>
-              <span className="flex items-center text-gray-600 text-sm">
-                <i className="far fa-calendar mr-2 text-indigo-500" />
-                {Number(new Date().getFullYear()) -
-                  Number(data.yearBuilding)}{" "}
-                years ago
-              </span>
-              <span className="flex items-center text-gray-600 text-sm">
-                <i className="fas fa-ruler-combined mr-2 text-indigo-500" />
-                8721
-              </span>
-            </div>
-
-            {/* Property Specs */}
-            <div className="grid grid-cols-3 gap-4 border-t pt-4">
-              <div className="text-center">
-                <i className="flaticon-bed text-xl text-indigo-500 mb-1" />
-                <p className="text-gray-700 font-medium">{data.bed} Bed</p>
-              </div>
-              <div className="text-center">
-                <i className="flaticon-shower text-xl text-indigo-500 mb-1" />
-                <p className="text-gray-700 font-medium">{data.bath} Bath</p>
-              </div>
-              <div className="text-center">
-                <i className="flaticon-expand text-xl text-indigo-500 mb-1" />
-                <p className="text-gray-700 font-medium">{data.sqft} Sqft</p>
-              </div>
-            </div>
+    <>
+      <div className="col-lg-8">
+        <div className="single-property-content mb30-md">
+          <h2 className="sp-lg-title">{data.title}</h2>
+          <div className="pd-meta mb15 d-md-flex align-items-center">
+            <p className="text fz15 mb-0 bdrr1 pr10 bdrrn-sm">
+              {data.location}
+            </p>
+            <a
+              className="ff-heading text-thm fz15 bdrr1 pr10 ml0-sm ml10 bdrrn-sm"
+              href="#"
+            >
+              <i className="fas fa-circle fz10 pe-2" />
+              For {data.forRent ? "rent" : "sale"}
+            </a>
+            <a
+              className="ff-heading bdrr1 fz15 pr10 ml10 ml0-sm bdrrn-sm"
+              href="#"
+            >
+              <i className="far fa-clock pe-2" />
+              {Number(new Date().getFullYear()) -
+                Number(data.yearBuilding)}{" "}
+              years ago
+            </a>
+            <a className="ff-heading ml10 ml0-sm fz15" href="#">
+              <i className="flaticon-fullscreen pe-2 align-text-top" />
+              8721
+            </a>
           </div>
-        </div>
-
-        {/* Right Section */}
-        <div className="lg:w-80 ">
-          <div className="bg-indigo-50 flex flex-col items-center justify-center lg:h-[250px] rounded-xl p-6 sticky top-6">
-            {/* Price */}
-            <div className="text-center mb-4">
-              <h3 className="text-3xl font-bold text-indigo-700">
-                {data.price}
-              </h3>
-              <p className="text-sm text-gray-600">
-                $
-                {(
-                  Number(data.price.split("$")[1].split(",").join("")) /
-                  data.sqft
-                ).toFixed(2)}
-                /sq ft
-              </p>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex justify-center gap-4">
-              <button className="p-2 hover:bg-indigo-100 rounded-full transition-colors">
-                <span className="flaticon-like text-indigo-600" />
-              </button>
-              <button className="p-2 hover:bg-indigo-100 rounded-full transition-colors">
-                <span className="flaticon-new-tab text-indigo-600" />
-              </button>
-              <button className="p-2 hover:bg-indigo-100 rounded-full transition-colors">
-                <span className="flaticon-share-1 text-indigo-600" />
-              </button>
-              <button className="p-2 hover:bg-indigo-100 rounded-full transition-colors">
-                <span className="flaticon-printer text-indigo-600" />
-              </button>
-            </div>
+          <div className="property-meta d-flex align-items-center">
+            <a className="text fz15" href="#">
+              <i className="flaticon-bed pe-2 align-text-top" />
+              {data.bed} bed
+            </a>
+            <a className="text ml20 fz15" href="#">
+              <i className="flaticon-shower pe-2 align-text-top" />
+              {data.bath} bath
+            </a>
+            <a className="text ml20 fz15" href="#">
+              <i className="flaticon-expand pe-2 align-text-top" />
+              {data.sqft} sqft
+            </a>
           </div>
         </div>
       </div>
-    </div>
+      {/* End .col-lg--8 */}
+
+      <div className="col-lg-4">
+        <div className="single-property-content">
+          <div className="property-action text-lg-end">
+            <div className="d-flex mb20 mb10-md align-items-center justify-content-lg-end">
+              <a className="icon mr10" href="#">
+                <span className="flaticon-like" />
+              </a>
+              <a className="icon mr10" href="#">
+                <span className="flaticon-new-tab" />
+              </a>
+              <a className="icon mr10" href="#">
+                <span className="flaticon-share-1" />
+              </a>
+              <a className="icon" href="#">
+                <span className="flaticon-printer" />
+              </a>
+            </div>
+            <h3 className="price mb-0">{data.price}</h3>
+            <p className="text space fz15">
+              $
+              {(
+                Number(data.price.split("$")[1].split(",").join("")) / data.sqft
+              ).toFixed(2)}
+              /sq ft
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* End .col-lg--4 */}
+    </>
   );
 };
 

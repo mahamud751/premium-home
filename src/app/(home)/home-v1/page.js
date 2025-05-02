@@ -17,6 +17,7 @@ import PopularCollection from "@/components/pages/popular-collection/popular-col
 import Reviews from "@/components/pages/reviews/Reviews";
 import Link from "next/link";
 import Blog from "@/components/home/home-v1/Blog";
+import DefaultHeader from "@/components/common/DefaultHeader";
 
 export const metadata = {
   title: "The Premium Homes Ltd",
@@ -26,7 +27,7 @@ const Home_V1 = () => {
   return (
     <>
       {/* Main Header Nav */}
-      <Header />
+      <DefaultHeader />
       {/* End Main Header Nav */}
 
       {/* Mobile Nav  */}

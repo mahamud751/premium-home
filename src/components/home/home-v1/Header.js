@@ -6,8 +6,11 @@ import LoginSignupModal from "@/components/common/login-signup-modal";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useAuth } from "@/hooks/auth";
 
 const Header = () => {
+  const { token, user } = useAuth();
+  console.log("token", token);
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
@@ -68,22 +71,27 @@ const Header = () => {
 
               <div className="col-auto">
                 <div className="d-flex align-items-center">
-                  <a
-                    href="#"
-                    className="login-info d-flex align-items-cente"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginSignupModal"
-                    role="button"
-                  >
-                    <i
-                      className="far fa-user-circle fz16 me-2"
-                      style={{
-                        color: "#00C194",
-                      }}
-                    />{" "}
-                    <span className="d-none d-xl-block">Login / Register</span>
-                  </a>
-                  <a
+                  {!token && (
+                    <a
+                      href="#"
+                      className="login-info d-flex align-items-cente"
+                      data-bs-toggle="modal"
+                      data-bs-target="#loginSignupModal"
+                      role="button"
+                    >
+                      <i
+                        className="far fa-user-circle fz16 me-2"
+                        style={{
+                          color: "#00C194",
+                        }}
+                      />{" "}
+                      <span className="d-none d-xl-block">
+                        Login / Register
+                      </span>
+                    </a>
+                  )}
+
+                  <Link
                     className="ud-btn add-property bdrs60 mx-2 mx-xl-4"
                     href="/dashboard-home"
                     style={{
@@ -91,9 +99,9 @@ const Header = () => {
                       backgroundColor: "#00C194",
                     }}
                   >
-                    Get started
+                    {user?.name}
                     <i className="fal fa-arrow-right-long" />
-                  </a>
+                  </Link>
                   {/* <a
                     className="sidemenu-btn filter-btn-right"
                     href="#"

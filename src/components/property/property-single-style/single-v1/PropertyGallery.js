@@ -6,24 +6,24 @@ import listings from "@/data/listings";
 
 const images = [
   {
-    src: "/images/listings/5.png",
+    src: "/images/listings/listing-single-2.jpg",
     alt: "2.jpg",
   },
   {
-    src: "/images/listings/2.png",
+    src: "/images/listings/listing-single-3.jpg",
     alt: "3.jpg",
   },
   {
-    src: "/images/listings/3.png",
+    src: "/images/listings/listing-single-4.jpg",
     alt: "4.jpg",
   },
   {
-    src: "/images/listings/4.png",
+    src: "/images/listings/listing-single-5.jpg",
     alt: "5.jpg",
   },
 ];
 
-const PropertyGallery = ({ id }) => {
+const PropertyGallery = ({id}) => {
   const data = listings.filter((elm) => elm.id == id)[0] || listings[0];
   return (
     <>
@@ -32,14 +32,14 @@ const PropertyGallery = ({ id }) => {
           <div className="sp-img-content mb15-md">
             <div className="popup-img preview-img-1 sp-img">
               <Item
-                original={"/images/listings/5.png"}
-                thumbnail={"/images/listings/5.png"}
+                original={'/images/listings/listing-single-1.jpg'}
+                thumbnail={'/images/listings/listing-single-1.jpg'}
                 width={610}
                 height={510}
               >
                 {({ ref, open }) => (
                   <Image
-                    src={"/images/listings/2.png"}
+                    src={'/images/listings/listing-single-1.jpg'}
                     width={591}
                     height={558}
                     ref={ref}

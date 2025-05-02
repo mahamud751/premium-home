@@ -39,6 +39,8 @@
     "recharts": "2.2.0",
     "sass": "^1.63.4",
     "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.19.1",
+    "sweetalert2-react-content": "^5.1.0",
     "swiper": "^8.4.7"
   },
   "devDependencies": {

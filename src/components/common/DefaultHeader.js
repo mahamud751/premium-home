@@ -6,16 +6,25 @@ import LoginSignupModal from "@/components/common/login-signup-modal";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useAuth } from "@/hooks/auth";
 
 const DefaultHeader = () => {
+  const { token, user } = useAuth();
   const [navbar, setNavbar] = useState(false);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const changeBackground = () => {
     if (window.scrollY >= 10) {
       setNavbar(true);
     } else {
       setNavbar(false);
     }
+  };
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   useEffect(() => {
@@ -65,32 +74,37 @@ const DefaultHeader = () => {
 
               <div className="col-auto">
                 <div className="d-flex align-items-center">
-                  <a
-                    href="#"
-                    className="login-info d-flex align-items-cente"
-                    data-bs-toggle="modal"
-                    data-bs-target="#loginSignupModal"
-                    role="button"
-                  >
-                    <i
-                      className="far fa-user-circle fz16 me-2"
-                      style={{
-                        color: "#00C194",
-                      }}
-                    />{" "}
-                    <span className="d-none d-xl-block">Login / Register</span>
-                  </a>
-                  <a
+                  {!token && (
+                    <a
+                      href="#"
+                      className="login-info d-flex align-items-cente"
+                      data-bs-toggle="modal"
+                      data-bs-target="#loginSignupModal"
+                      role="button"
+                      onClick={openModal}
+                    >
+                      <i
+                        className="far fa-user-circle fz16 me-2"
+                        style={{
+                          color: "#00C194",
+                        }}
+                      />{" "}
+                      <span className="d-none d-xl-block">
+                        Login / Register
+                      </span>
+                    </a>
+                  )}
+                  <Link
                     className="ud-btn add-property bdrs60 mx-2 mx-xl-4"
-                    // href="/dashboard-add-property"
+                    href="/dashboard-home"
                     style={{
                       color: "white",
                       backgroundColor: "#00C194",
                     }}
                   >
-                    Get started
+                    {user?.name}
                     <i className="fal fa-arrow-right-long" />
-                  </a>
+                  </Link>
                   {/* <a
                     className="sidemenu-btn filter-btn-right"
                     href="#"
@@ -131,9 +145,10 @@ const DefaultHeader = () => {
           tabIndex={-1}
           aria-labelledby="loginSignupModalLabel"
           aria-hidden="true"
+          style={{ display: isModalOpen ? "block" : "none" }}
         >
           <div className="modal-dialog  modal-dialog-scrollable modal-dialog-centered">
-            <LoginSignupModal />
+            <LoginSignupModal closeModal={closeModal} />
           </div>
         </div>
       </div>

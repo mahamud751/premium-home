@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-rangeslider/lib/index.css";
+import Providers from "./provider";
 if (typeof window !== "undefined") {
   import("bootstrap");
 }
@@ -42,7 +43,9 @@ export default function RootLayout({ children }) {
         className={`body  ${poppins.variable} ${dmSans.variable}`}
         cz-shortcut-listen="false"
       >
-        <div className="wrapper ovh">{children}</div>
+        <div className="wrapper ovh">
+          <Providers>{children}</Providers>
+        </div>
 
         <ScrollToTop />
       </body>
