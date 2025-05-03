@@ -1,11 +1,9 @@
-import DashboardHeader from "@/components/common/DashboardHeader";
 import MobileMenu from "@/components/common/mobile-menu";
-import Pagination from "@/components/property/Pagination";
 import Footer from "@/components/property/dashboard/Footer";
 import SidebarDashboard from "@/components/property/dashboard/SidebarDashboard";
 import PropertyDataTable from "@/components/property/dashboard/dashboard-my-properties/PropertyDataTable";
 import DboardMobileNavigation from "@/components/property/dashboard/DboardMobileNavigation";
-import FilterHeader from "@/components/property/dashboard/dashboard-my-properties/FilterHeader";
+import DefaultHeader from "@/components/common/DefaultHeader";
 
 export const metadata = {
   title: "Dashboard Properties || Homez - Real Estate NextJS Template",
@@ -15,7 +13,7 @@ const DashboardMyProperties = () => {
   return (
     <>
       {/* Main Header Nav */}
-      <DashboardHeader />
+      <DefaultHeader />
       {/* End Main Header Nav */}
 
       {/* Mobile Nav  */}
@@ -45,9 +43,9 @@ const DashboardMyProperties = () => {
                     <p className="text">We are glad to see you again!</p>
                   </div>
                 </div>
-                <div className="col-xxl-9">
+                {/* <div className="col-xxl-9">
                   <FilterHeader />
-                </div>
+                </div> */}
               </div>
               {/* End .row */}
 
@@ -57,9 +55,9 @@ const DashboardMyProperties = () => {
                     <div className="packages_table table-responsive">
                       <PropertyDataTable />
 
-                      <div className="mt30">
+                      {/* <div className="mt30">
                         <Pagination />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>

@@ -16,14 +16,12 @@ const Footer = () => {
           <div className="col-auto">
             <div className="copyright-widget">
               <p className="text">
-                © Homez {currentYear}{" "}
+                © The Premium Homes Ltd {currentYear}{" "}
                 <a
                   href="https://themeforest.net/user/ib-themes"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  ib-themes
-                </a>{" "}
+                ></a>{" "}
                 - All rights reserved
               </p>
             </div>

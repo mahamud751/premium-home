@@ -1,4 +1,4 @@
-import DashboardHeader from "@/components/common/DashboardHeader";
+import DefaultHeader from "@/components/common/DefaultHeader";
 import MobileMenu from "@/components/common/mobile-menu";
 import DboardMobileNavigation from "@/components/property/dashboard/DboardMobileNavigation";
 import Footer from "@/components/property/dashboard/Footer";
@@ -15,7 +15,7 @@ const DashboardHome = () => {
   return (
     <>
       {/* Main Header Nav */}
-      <DashboardHeader />
+      <DefaultHeader />
       {/* End Main Header Nav */}
 
       {/* Mobile Nav  */}
@@ -28,7 +28,7 @@ const DashboardHome = () => {
           <SidebarDashboard />
           {/* End .dashboard__sidebar */}
 
-          <div className="dashboard__main pl0-md">
+          <div className="dashboard__main pl0-md ">
             <div className="dashboard__content bgc-f7">
               <div className="row pb40">
                 <div className="col-lg-12">
@@ -51,24 +51,6 @@ const DashboardHome = () => {
               </div>
               {/* End .row */}
 
-              <div className="row">
-                <div className="col-xl-8">
-                  <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                    <div className="row">
-                      <PropertyViews />
-                    </div>
-                  </div>
-                </div>
-                {/* End col-xl-8 */}
-
-                <div className="col-xl-4">
-                  <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
-                    <h4 className="title fz17 mb25">Recent Activities</h4>
-                    <RecentActivities />
-                  </div>
-                </div>
-                {/* End .col-xl-4 */}
-              </div>
               {/* End .row */}
             </div>
             {/* End .dashboard__content */}
