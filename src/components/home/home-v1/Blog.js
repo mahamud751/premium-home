@@ -3,12 +3,14 @@ import axios from "axios";
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Blog = () => {
   const [blogsData, setBlogsData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const pathname = usePathname() 
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -47,9 +49,11 @@ const Blog = () => {
     );
   }
 
+  const dataToShow = pathname === "/" ? blogsData?.slice(0, 3) : blogsData;
+
   return (
     <>
-      {blogsData?.map((blog) => {
+      {dataToShow?.map((blog) => {
         const date = moment(blog?.created_at);
         const month = date.format("MMMM");
         const day = date.format("DD");
