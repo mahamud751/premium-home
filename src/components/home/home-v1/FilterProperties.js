@@ -1,8 +1,9 @@
 "use client";
 import listings from "@/data/listings";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
@@ -13,6 +14,49 @@ const FilterProperties = () => {
   const filteredListings = listings.filter(
     (listing) => listing.tags && listing.tags.includes(selectedTag)
   );
+
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  console.log({ products });
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(
+          "https://premium.samironbarai.xyz/v1/products"
+        );
+        setProducts(response.data.data);
+        setLoading(false);
+      } catch (err) {
+        setError("Failed to fetch banner data");
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="our-faq pt-20 py-12 md:px-4">
+        <div className="container mx-auto max-w-7xl">
+          <p className="text-center ">Loading Banners...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="our-faq pt-20 py-12 md:px-4">
+        <div className="container mx-auto max-w-7xl">
+          <p className="text-center text-red-600">{error}</p>
+        </div>
+      </section>
+    );
+  }
 
   const handleTagClick = (tag) => {
     setSelectedTag(tag);
@@ -107,7 +151,7 @@ const FilterProperties = () => {
                   },
                 }}
               >
-                {filteredListings.slice(0, 4).map((listing) => (
+                {products?.slice(0, 4).map((listing) => (
                   <SwiperSlide key={listing.id}>
                     <Link href={`/single-v1/${listing.id}`}>
                       <div className="item">
@@ -117,16 +161,11 @@ const FilterProperties = () => {
                               width={382}
                               height={248}
                               className="w-100 h-100 cover"
-                              src={listing.image}
+                              // use 'images' field from API
+                              src={listing.images}
                               alt="listings"
                             />
                             <div className="sale-sticker-wrap">
-                              {listing.forRent && (
-                                <div className="list-tag rounded-0 fz12">
-                                  <span className="flaticon-electricity" />
-                                  FEATURED
-                                </div>
-                              )}
                               <div className="list-tag2 rounded-0 fz12">
                                 FOR SALE
                               </div>
@@ -147,26 +186,29 @@ const FilterProperties = () => {
                           <div className="list-content">
                             <h6 className="list-title">
                               <Link href={`/single-v1/${listing.id}`}>
-                                {listing.title}
+                                {/* Use description as title */}
+                                {listing.description}
                               </Link>
                             </h6>
 
                             <div className="d-flex justify-content-between align-items-center">
                               <div className="list-price">
-                                {listing.price} / <span>mo</span>
+                                {/* Format price */}
+                                {listing.total_price.toLocaleString()}{" "}
+                                <span>৳</span>
                               </div>
                               <div className="list-meta2 d-flex align-items-center">
                                 <a href="#" className="mr10">
                                   <span className="flaticon-bed mr5" />{" "}
-                                  {listing.bed}
+                                  {listing.bedroom}
                                 </a>
                                 <a href="#" className="mr10">
                                   <span className="flaticon-shower mr5" />{" "}
-                                  {listing.bath}
+                                  {listing.bathroom}
                                 </a>
                                 <a href="#">
                                   <span className="flaticon-expand" />{" "}
-                                  {listing.sqft}
+                                  {listing.flat_size} sqft
                                 </a>
                               </div>
                             </div>
