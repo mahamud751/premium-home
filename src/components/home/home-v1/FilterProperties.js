@@ -1,12 +1,20 @@
 "use client";
 import listings from "@/data/listings";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
+
+const fetchProducts = async () => {
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_BASEURL}/v1/products`
+  );
+  return response.data.data;
+};
 
 const FilterProperties = () => {
   const [selectedTag, setSelectedTag] = useState("house");
@@ -15,30 +23,16 @@ const FilterProperties = () => {
     (listing) => listing.tags && listing.tags.includes(selectedTag)
   );
 
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const {
+    data: products = [],
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["products"],
+    queryFn: fetchProducts,
+  });
 
-  console.log({ products });
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get(
-          "https://premium.samironbarai.xyz/v1/products"
-        );
-        setProducts(response.data.data);
-        setLoading(false);
-      } catch (err) {
-        setError("Failed to fetch banner data");
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <section className="our-faq pt-20 py-12 md:px-4">
         <div className="container mx-auto max-w-7xl">
@@ -48,11 +42,11 @@ const FilterProperties = () => {
     );
   }
 
-  if (error) {
+  if (isError) {
     return (
       <section className="our-faq pt-20 py-12 md:px-4">
         <div className="container mx-auto max-w-7xl">
-          <p className="text-center text-red-600">{error}</p>
+          <p className="text-center text-red-600">{isError}</p>
         </div>
       </section>
     );
