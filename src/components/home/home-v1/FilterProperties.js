@@ -65,7 +65,7 @@ const FilterProperties = () => {
             <p className="paragraph">Aliquam lacinia diam quis lacus euismod</p>
           </div>
         </div>
-        <div className="col-lg-6">
+        {/* <div className="col-lg-6">
           <div className="dark-light-navtab style2 text-start text-lg-end mt-0 mt-lg-4 mb-4">
             <ul className="nav nav-pills justify-content-start justify-content-lg-end">
               <li className="nav-item">
@@ -110,7 +110,7 @@ const FilterProperties = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </div> */}
       </div>
       {/* End .row */}
 
@@ -147,7 +147,7 @@ const FilterProperties = () => {
               >
                 {products?.slice(0, 4).map((listing) => (
                   <SwiperSlide key={listing.id}>
-                    <Link href={`/single-v1/${listing.id}`}>
+                    <Link href={`/product/${listing.id}`}>
                       <div className="item">
                         <div className="listing-style7 mb60">
                           <div className="list-thumb">
@@ -179,7 +179,7 @@ const FilterProperties = () => {
                           </div>
                           <div className="list-content">
                             <h6 className="list-title">
-                              <Link href={`/single-v1/${listing.id}`}>
+                              <Link href={`/product/${listing.id}`}>
                                 {/* Use description as title */}
                                 {listing.description}
                               </Link>
