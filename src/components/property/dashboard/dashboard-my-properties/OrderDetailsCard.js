@@ -10,6 +10,8 @@ const OrderDetailsCard = ({ id }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  console.log(order)
+
   useEffect(() => {
     const fetchOrderData = async () => {
       try {
@@ -60,6 +62,33 @@ const OrderDetailsCard = ({ id }) => {
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
           Order Details - Flat {order.flat_type}
         </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-4 md:pt-0 pb-4">
+          <div className="bg-white rounded-2xl shadow-md p-6 text-center">
+            <h2 className="text-lg font-semibold text-gray-600 mb-2">
+              EMI Amount
+            </h2>
+            <p className="text-2xl font-bold text-yellow-500">
+              {order?.emi_amount}
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl shadow-md p-6 text-center">
+            <h2 className="text-lg font-semibold text-gray-600 mb-2">
+              Paid Amount
+            </h2>
+            <p className="text-2xl font-bold text-green-500">
+              {order?.paid_amount}
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl shadow-md p-6 text-center">
+            <h2 className="text-lg font-semibold text-gray-600 mb-2">
+              Due Amount
+            </h2>
+            <p className="text-2xl font-bold text-red-500">
+              {order?.due_amount}
+            </p>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Card 1: Basic Information */}
           <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
