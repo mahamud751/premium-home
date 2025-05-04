@@ -7,15 +7,17 @@ import { useEffect, useState } from "react";
 const OrderDetailsCard = ({ id }) => {
   const { token } = useAuth();
   const [order, setOrder] = useState([]);
+  const [payments, setPayments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log(order)
+  console.log({ payments });
 
   useEffect(() => {
-    const fetchOrderData = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get(
+        // Fetch order data
+        const orderRes = await axios.get(
           `https://premium.samironbarai.xyz/v1/orders/${id}`,
           {
             headers: {
@@ -23,15 +25,27 @@ const OrderDetailsCard = ({ id }) => {
             },
           }
         );
-        setOrder(response.data.data);
+
+        setOrder(orderRes.data.data);
+
+        const paymentsRes = await axios.get(
+          `https://premium.samironbarai.xyz/v1/payments?_entity_type=Product&_entity_id=1`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        setPayments(paymentsRes.data.data);
         setLoading(false);
       } catch (err) {
-        setError("Failed to fetch banner data");
+        setError("Failed to fetch order or payments data");
         setLoading(false);
       }
     };
 
-    fetchOrderData();
+    fetchData();
   }, []);
 
   if (loading) {
@@ -205,6 +219,74 @@ const OrderDetailsCard = ({ id }) => {
           >
             Print Order Details
           </button>
+        </div>
+      </div>
+
+      {/* payment history */}
+      <div className="p-4">
+        <div className="overflow-x-auto">
+          <table className="min-w-full border border-gray-200 text-sm">
+            <thead className="bg-gray-100 text-gray-700 uppercase text-xs">
+              <tr>
+                <th className="p-3 text-left">Date</th>
+                <th className="p-3 text-left">Transaction ID</th>
+                <th className="p-3 text-left">Amount</th>
+                <th className="p-3 text-left">Method</th>
+                <th className="p-3 text-left">Type</th>
+                <th className="p-3 text-left">Status</th>
+                <th className="p-3 text-left">Note</th>
+                <th className="p-3 text-left">Document</th>
+              </tr>
+            </thead>
+            <tbody>
+              {payments?.map((p) => (
+                <tr
+                  key={p.id}
+                  className="border-t border-gray-200 hover:bg-gray-50"
+                >
+                  <td className="p-3">
+                    {new Date(p.payment_date).toLocaleDateString()}
+                  </td>
+                  <td className="p-3 font-medium text-blue-600">
+                    {p.transaction_id}
+                  </td>
+                  <td className="p-3 text-green-600">
+                    ৳{(p.amount / 100).toFixed(2)}
+                  </td>
+                  <td className="p-3">{p.payment_method}</td>
+                  <td className="p-3">{p.payment_type}</td>
+                  <td className="p-3">
+                    {p.payment_status ? (
+                      <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">
+                        {p.payment_status}
+                      </span>
+                    ) : (
+                      <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">
+                        Pending
+                      </span>
+                    )}
+                  </td>
+                  <td className="p-3">{p.payment_note}</td>
+                  <td className="p-3">
+                    <a
+                      href={p.documents}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 underline"
+                    >
+                      View
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          {payments.length === 0 && (
+            <div className="text-center text-gray-500 py-8">
+              No payments found.
+            </div>
+          )}
         </div>
       </div>
     </section>
