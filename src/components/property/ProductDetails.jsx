@@ -3,9 +3,26 @@
 import { useAuth } from "@/hooks/auth";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { useState } from "react";
 
 const ProductDetails = ({ id }) => {
   const { token } = useAuth();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
+
   const fetchSingleProduct = async (id, token) => {
     const response = await axios.get(
       `https://premium.samironbarai.xyz/v1/admin/products/${id}`,
@@ -229,6 +246,61 @@ const ProductDetails = ({ id }) => {
               </button>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className=" flex items-center justify-center p-4">
+        <div className="w-full max-w-md bg-white text-black rounded-lg shadow-lg p-6">
+          <h2 className="text-2xl font-bold text-center mb-4">
+            Book A Free Consultation
+          </h2>
+          <div className="flex justify-center space-x-4 mb-4 text-sm">
+            <span>📞 16604</span>
+            <span>📱 +880961391919</span>
+            <span>📧 info@pino.org</span>
+          </div>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="flex space-x-2">
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Name"
+                className="w-1/2 p-2 bg-gray-200 text-black rounded"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email"
+                className="w-1/2 p-2 bg-gray-200 text-black rounded"
+                required
+              />
+            </div>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Phone"
+              className="w-full p-2 bg-gray-200 text-black rounded flex items-center"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Type Message..."
+              className="w-full p-2 bg-gray-200 text-black rounded h-20 resize-none"
+            />
+            <button
+              type="submit"
+              className="w-full bg-black text-white p-2 rounded hover:bg-gray-800 transition"
+            >
+              SUBMIT
+            </button>
+          </form>
         </div>
       </div>
     </section>
