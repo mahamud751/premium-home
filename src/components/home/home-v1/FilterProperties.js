@@ -145,7 +145,7 @@ const FilterProperties = () => {
                   },
                 }}
               >
-                {products?.slice(0, 4).map((listing) => (
+                {products?.map((listing) => (
                   <SwiperSlide key={listing.id}>
                     <Link href={`/product/${listing.id}`}>
                       <div className="item">

@@ -1,38 +1,34 @@
 "use client";
 
 import { useAuth } from "@/hooks/auth";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useEffect, useState } from "react";
 
 const ProductDetails = ({ id }) => {
   const { token } = useAuth();
-  const [product, setProduct] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchSingleProduct = async () => {
-      try {
-        const response = await axios.get(
-          `https://premium.samironbarai.xyz/v1/admin/products/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        setProduct(response.data.data);
-        setLoading(false);
-      } catch (err) {
-        setError("Failed to fetch banner data");
-        setLoading(false);
+  const fetchSingleProduct = async (id, token) => {
+    const response = await axios.get(
+      `https://premium.samironbarai.xyz/v1/admin/products/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
-    };
+    );
+    return response.data.data;
+  };
 
-    fetchSingleProduct();
-  }, []);
+  const {
+    data: product,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["single-product", id],
+    queryFn: () => fetchSingleProduct(id, token),
+    enabled: !!id && !!token,
+  });
 
-  if (loading) {
+  if (isLoading) {
     return (
       <section className="min-h-screen bg-white flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl w-full text-center">
@@ -44,11 +40,11 @@ const ProductDetails = ({ id }) => {
     );
   }
 
-  if (error) {
+  if (isError) {
     return (
       <section className="min-h-screen bg-white flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl w-full text-center">
-          <p className="text-lg text-red-400 font-medium">{error}</p>
+          <p className="text-lg text-red-400 font-medium">{isError}</p>
         </div>
       </section>
     );
