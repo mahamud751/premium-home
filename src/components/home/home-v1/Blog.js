@@ -1,35 +1,31 @@
 "use client";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+
+const fetchBlogs = async () => {
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_BASEURL}/v1/blogs`
+  );
+  return response.data.data;
+};
 
 const Blog = () => {
-  const [blogsData, setBlogsData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const pathname = usePathname() 
+  const pathname = usePathname();
 
-  useEffect(() => {
-    const fetchBlogData = async () => {
-      try {
-        const response = await axios.get(
-          "https://premium.samironbarai.xyz/v1/blogs"
-        );
-        setBlogsData(response.data.data);
-        setLoading(false);
-      } catch (err) {
-        setError("Failed to fetch FAQ data");
-        setLoading(false);
-      }
-    };
+  const {
+    data: blogsData,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: fetchBlogs,
+  });
 
-    fetchBlogData();
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <section className="our-faq pt-0 py-12 md:px-4">
         <div className="container mx-auto max-w-7xl">
@@ -39,11 +35,11 @@ const Blog = () => {
     );
   }
 
-  if (error) {
+  if (isError) {
     return (
       <section className="our-faq pt-0 py-12 md:px-4">
         <div className="container mx-auto max-w-7xl">
-          <p className="text-center text-red-600">{error}</p>
+          <p className="text-center text-red-600">{isError}</p>
         </div>
       </section>
     );
