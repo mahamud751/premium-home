@@ -1,15 +1,16 @@
 "use client";
 import ScrollToTop from "@/components/common/ScrollTop";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Aos from "aos";
-import "./global.css";
-import "../../node_modules/react-modal-video/scss/modal-video.scss";
 import "aos/dist/aos.css";
-import "../../public/scss/main.scss";
 import { DM_Sans, Poppins } from "next/font/google";
 import { useEffect } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "react-rangeslider/lib/index.css";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "../../node_modules/react-modal-video/scss/modal-video.scss";
+import "../../public/scss/main.scss";
+import "./global.css";
 import Providers from "./provider";
 if (typeof window !== "undefined") {
   import("bootstrap");
@@ -30,6 +31,7 @@ const poppins = Poppins({
 });
 
 export default function RootLayout({ children }) {
+  const queryClient = new QueryClient();
   useEffect(() => {
     Aos.init({
       duration: 1200,
@@ -43,11 +45,13 @@ export default function RootLayout({ children }) {
         className={`body  ${poppins.variable} ${dmSans.variable}`}
         cz-shortcut-listen="false"
       >
-        <div className="wrapper ovh">
-          <Providers>{children}</Providers>
-        </div>
+        <QueryClientProvider client={queryClient}>
+          <div className="wrapper ovh">
+            <Providers>{children}</Providers>
+          </div>
 
-        <ScrollToTop />
+          <ScrollToTop />
+        </QueryClientProvider>
       </body>
     </html>
   );
