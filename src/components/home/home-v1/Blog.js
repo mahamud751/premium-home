@@ -60,7 +60,7 @@ const Blog = () => {
 
         return (
           <div className="col-sm-6 col-lg-4" key={blog?.id}>
-            <Link href={`/blogs/${blog?.id}`}>
+            <Link href={`/blogs/${blog?.slug}`}>
               <div className="blog-style1">
                 <div className="blog-img">
                   {blog?.image?.[0] ? (
@@ -89,9 +89,9 @@ const Blog = () => {
                     <span className="month">{month}</span>
                     <span className="day">{day}</span>
                   </div>
-                  <a className="tag" href="#">
+                  <Link href={`/blogs/${blog?.slug}`} className="tag">
                     {blog?.title}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </Link>

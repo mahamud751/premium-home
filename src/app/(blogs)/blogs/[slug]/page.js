@@ -1,4 +1,5 @@
 "use client";
+
 import CallToActions from "@/components/common/CallToActions";
 import DefaultHeader from "@/components/common/DefaultHeader";
 import Footer from "@/components/common/default-footer";
@@ -10,41 +11,38 @@ import axios from "axios";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
+const fetchSingleBlog = async (slug, token) => {
+  const response = await axios.get(
+    `https://premium.samironbarai.xyz/v1/blogs/${slug}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  return response.data.data;
+};
+
 const SingleBlog = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const { token } = useAuth();
 
-  const fetchSingleProduct = async (id, token) => {
-    const response = await axios.get(
-      `https://premium.samironbarai.xyz/v1/blogs/${id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    return response.data.data;
-  };
-  const { data: blog } = useQuery({
-    queryKey: ["single-blog", id],
-    queryFn: () => fetchSingleProduct(id, token),
-    enabled: !!id && !!token,
+  const { data: blog, isLoading } = useQuery({
+    queryKey: ["single-blog", slug],
+    queryFn: () => fetchSingleBlog(slug, token),
+    enabled: !!slug && !!token,
   });
-
-  console.log("blog", blog);
 
   return (
     <>
       {/* Main Header Nav */}
       <DefaultHeader />
-      {/* End Main Header Nav */}
 
-      {/* Mobile Nav  */}
+      {/* Mobile Nav */}
       <MobileMenu />
-      {/* End Mobile Nav  */}
 
       {/* Breadcrumb Sections */}
-      <section className="breadcumb-section">
+      <section className="breadcrumb-section">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -59,20 +57,23 @@ const SingleBlog = () => {
           </div>
         </div>
       </section>
-      {/* End Breadcrumb Sections */}
 
-      {/* blog content content */}
-      <BlogContent />
+      {/* Blog Content */}
+      {isLoading ? (
+        <div className="text-center py-10">Loading blog...</div>
+      ) : blog ? (
+        <BlogContent blog={blog} />
+      ) : (
+        <div className="text-center py-10 text-red-500">Blog not found.</div>
+      )}
 
-      {/* Our CTA */}
+      {/* CTA */}
       <CallToActions />
-      {/* Our CTA */}
 
-      {/* Start Our Footer */}
+      {/* Footer */}
       <section className="footer-style1 pt60 pb-0">
         <Footer />
       </section>
-      {/* End Our Footer */}
     </>
   );
 };
