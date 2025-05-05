@@ -1,127 +1,145 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 const ScheduleTour = () => {
-  const tabs = [
-    {
-      id: "inperson",
-      label: "In Person",
-    },
-    {
-      id: "videochat",
-      label: "Video Chat",
-    },
-  ];
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    details: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+    setSuccess(null);
+
+    try {
+      const response = await fetch(
+        "https://premium.samironbarai.xyz/v1/product-requests",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            mobile: formData.phone,
+            email: formData.email,
+            details: formData.details,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to submit the request");
+      }
+
+      const result = await response.json();
+      setSuccess("Tour request submitted successfully!");
+      setFormData({ name: "", email: "", phone: "", details: "" });
+    } catch (err) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="ps-navtab">
-      <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        {tabs.map((tab) => (
-          <li className="nav-item" key={tab.id} role="presentation">
-            <button
-              className={`nav-link${
-                tab.id === "inperson" ? " active mr15 mb5-lg" : ""
-              }`}
-              id={`pills-${tab.id}-tab`}
-              data-bs-toggle="pill"
-              data-bs-target={`#pills-${tab.id}`}
-              type="button"
-              role="tab"
-              aria-controls={`pills-${tab.id}`}
-              aria-selected={tab.id === "inperson" ? "true" : "false"}
-            >
-              {tab.label}
-            </button>
-          </li>
-        ))}
-      </ul>
-      {/* End nav-pills */}
-
       <div className="tab-content" id="pills-tabContent">
-        {tabs.map((tab) => (
-          <div
-            className={`tab-pane fade${
-              tab.id === "inperson" ? " show active" : ""
-            }`}
-            id={`pills-${tab.id}`}
-            role="tabpanel"
-            aria-labelledby={`pills-${tab.id}-tab`}
-            key={tab.id}
-          >
-            <form className="form-style1">
-              <div className="row">
-                <div className="col-md-12">
-                  <div className="mb20">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Time"
-                      required
-                    />
-                  </div>
+        <div role="tabpanel">
+          <form className="form-style1" onSubmit={handleSubmit}>
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="mb20">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
-                {/* End .col-12 */}
-
-                <div className="col-lg-12">
-                  <div className="mb20">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Name"
-                      required
-                    />
-                  </div>
-                </div>
-                {/* End .col-12 */}
-
-                <div className="col-lg-12">
-                  <div className="mb20">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Phone"
-                      required
-                    />
-                  </div>
-                </div>
-                {/* End .col-12 */}
-
-                <div className="col-md-12">
-                  <div className="mb20">
-                    <input
-                      type="email"
-                      className="form-control"
-                      placeholder="Email"
-                      required
-                    />
-                  </div>
-                </div>
-                {/* End .col-12 */}
-
-                <div className="col-md-12">
-                  <div className="mb10">
-                    <textarea
-                      cols={30}
-                      rows={4}
-                      placeholder="Enter Your Messages"
-                      defaultValue={""}
-                    />
-                  </div>
-                </div>
-                {/* End .col-12 */}
-
-                <div className="col-md-12">
-                  <div className="d-grid">
-                    <button type="submit" className="ud-btn btn-thm">
-                      Submit a Tour Request
-                      <i className="fal fa-arrow-right-long" />
-                    </button>
-                  </div>
-                </div>
-                {/* End .col-12 */}
               </div>
-            </form>
-          </div>
-        ))}
+
+              <div className="col-lg-12">
+                <div className="mb20">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="col-md-12">
+                <div className="mb20">
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="col-md-12">
+                <div className="mb10">
+                  <textarea
+                    cols={30}
+                    rows={4}
+                    placeholder="Enter Your Messages"
+                    name="details"
+                    value={formData.details}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+
+              <div className="col-md-12">
+                <div className="d-grid">
+                  <button
+                    type="submit"
+                    className="ud-btn btn-thm"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Submitting..." : "Submit Request"}
+                    <i className="fal fa-arrow-right-long" />
+                  </button>
+                </div>
+              </div>
+
+              {success && (
+                <div className="col-md-12 mt20">
+                  <p className="text-success">{success}</p>
+                </div>
+              )}
+              {error && (
+                <div className="col-md-12 mt20">
+                  <p className="text-danger">{error}</p>
+                </div>
+              )}
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

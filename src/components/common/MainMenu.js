@@ -77,8 +77,8 @@ const MainMenu = () => {
         </ul> */}
       </li>
       <li className="visible_list dropitem">
-        <Link className="list-item" href="/marketplace">
-          <span>Marketplace</span>
+        <Link className="list-item" href="/properties">
+          <span>Properties</span>
         </Link>
       </li>
       {/* End homeItems */}

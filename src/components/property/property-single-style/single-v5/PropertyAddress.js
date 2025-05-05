@@ -1,4 +1,3 @@
-import ListingMap1 from "@/components/listing/map-style/ListingMap1";
 import React from "react";
 
 const PropertyAddress = () => {
@@ -41,10 +40,7 @@ const PropertyAddress = () => {
       ))}
       {/* End col */}
 
-      <div className="col-md-12 h-500" style={{height:'400px'}}>
-
-   <ListingMap1/>
-      </div>
+      <div className="col-md-12 h-500" style={{ height: "400px" }}></div>
       {/* End col */}
     </>
   );

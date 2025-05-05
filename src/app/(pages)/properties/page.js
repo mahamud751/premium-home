@@ -22,8 +22,11 @@ const Market = () => {
 
       {/* Breadcumb Sections */}
 
-      <div className="my-3">
-        <MarketBanner />
+      <div className="my-10 text-center">
+        <p className="text-bolder text-[60px]">
+          {" "}
+          Discover the best properties in the market
+        </p>
       </div>
 
       {/* End Breadcumb Sections */}

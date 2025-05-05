@@ -32,6 +32,12 @@ const FilterProperties = () => {
     queryFn: fetchProducts,
   });
 
+  const getSingleImage = (images) => {
+    if (Array.isArray(images)) {
+      return images[0] || "/path/to/fallback-image.jpg";
+    }
+    return images || "/path/to/fallback-image.jpg";
+  };
   if (isLoading) {
     return (
       <section className="our-faq pt-20 py-12 md:px-4">
@@ -52,17 +58,12 @@ const FilterProperties = () => {
     );
   }
 
-  const handleTagClick = (tag) => {
-    setSelectedTag(tag);
-  };
-
   return (
     <>
       <div className="row wow fadeInUp" data-wow-delay="100ms">
         <div className="col-lg-6">
           <div className="main-title2">
             <h2 className="title">Discover Popular Properties</h2>
-            <p className="paragraph">Aliquam lacinia diam quis lacus euismod</p>
           </div>
         </div>
         {/* <div className="col-lg-6">
@@ -145,73 +146,74 @@ const FilterProperties = () => {
                   },
                 }}
               >
-                {products?.map((listing) => (
-                  <SwiperSlide key={listing.id}>
-                    <Link href={`/product/${listing.id}`}>
-                      <div className="item">
-                        <div className="listing-style7 mb60">
-                          <div className="list-thumb">
-                            <Image
-                              width={382}
-                              height={248}
-                              className="w-100 h-100 cover"
-                              // use 'images' field from API
-                              src={listing.images}
-                              alt="listings"
-                            />
-                            <div className="sale-sticker-wrap">
-                              <div className="list-tag2 rounded-0 fz12">
-                                FOR SALE
+                {products?.map((listing) => {
+                  return (
+                    <SwiperSlide key={listing.id}>
+                      <Link href={`/property/${listing.id}`}>
+                        <div className="item">
+                          <div className="listing-style7 mb10">
+                            <div className="list-thumb">
+                              <Image
+                                width={382}
+                                height={248}
+                                className="w-100 h-100 cover"
+                                src={getSingleImage(listing.images)}
+                                alt="listings"
+                              />
+                              <div className="sale-sticker-wrap">
+                                <div className="list-tag2 rounded-0 fz12">
+                                  FOR SALE
+                                </div>
                               </div>
-                            </div>
 
-                            <div className="list-meta">
-                              <a href="#" className="mr5">
-                                <span className="flaticon-fullscreen" />
-                              </a>
-                              <a href="#" className="mr5">
-                                <span className="flaticon-new-tab" />
-                              </a>
-                              <a href="#">
-                                <span className="flaticon-like" />
-                              </a>
-                            </div>
-                          </div>
-                          <div className="list-content">
-                            <h6 className="list-title">
-                              <Link href={`/product/${listing.id}`}>
-                                {/* Use description as title */}
-                                {listing.description}
-                              </Link>
-                            </h6>
-
-                            <div className="d-flex justify-content-between align-items-center">
-                              <div className="list-price">
-                                {/* Format price */}
-                                {listing.total_price.toLocaleString()}{" "}
-                                <span>৳</span>
-                              </div>
-                              <div className="list-meta2 d-flex align-items-center">
-                                <a href="#" className="mr10">
-                                  <span className="flaticon-bed mr5" />{" "}
-                                  {listing.bedroom}
+                              <div className="list-meta">
+                                <a href="#" className="mr5">
+                                  <span className="flaticon-fullscreen" />
                                 </a>
-                                <a href="#" className="mr10">
-                                  <span className="flaticon-shower mr5" />{" "}
-                                  {listing.bathroom}
+                                <a href="#" className="mr5">
+                                  <span className="flaticon-new-tab" />
                                 </a>
                                 <a href="#">
-                                  <span className="flaticon-expand" />{" "}
-                                  {listing.flat_size} sqft
+                                  <span className="flaticon-like" />
                                 </a>
+                              </div>
+                            </div>
+                            <div className="list-content">
+                              <h6 className="list-title">
+                                <Link href={`/product/${listing.id}`}>
+                                  {/* Use description as title */}
+                                  {listing.description}
+                                </Link>
+                              </h6>
+
+                              <div className="d-flex justify-content-between align-items-center">
+                                <div className="list-price">
+                                  {/* Format price */}
+                                  {listing.total_price.toLocaleString()}{" "}
+                                  <span>৳</span>
+                                </div>
+                                <div className="list-meta2 d-flex align-items-center">
+                                  <a href="#" className="mr10">
+                                    <span className="flaticon-bed mr5" />{" "}
+                                    {listing.bedroom}
+                                  </a>
+                                  <a href="#" className="mr10">
+                                    <span className="flaticon-shower mr5" />{" "}
+                                    {listing.bathroom}
+                                  </a>
+                                  <a href="#">
+                                    <span className="flaticon-expand" />{" "}
+                                    {listing.flat_size} sqft
+                                  </a>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  </SwiperSlide>
-                ))}
+                      </Link>
+                    </SwiperSlide>
+                  );
+                })}
               </Swiper>
 
               <div className="row align-items-center justify-content-center">

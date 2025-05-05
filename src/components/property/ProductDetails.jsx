@@ -6,6 +6,7 @@ import axios from "axios";
 import { useState } from "react";
 
 const ProductDetails = ({ id }) => {
+  console.log(id);
   const { token } = useAuth();
 
   const [formData, setFormData] = useState({
@@ -25,7 +26,7 @@ const ProductDetails = ({ id }) => {
 
   const fetchSingleProduct = async (id, token) => {
     const response = await axios.get(
-      `https://premium.samironbarai.xyz/v1/admin/products/${id}`,
+      `https://premium.samironbarai.xyz/v1/products/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

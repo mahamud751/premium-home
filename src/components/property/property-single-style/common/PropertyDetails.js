@@ -1,49 +1,67 @@
 import React from "react";
 
-const PropertyDetails = () => {
+const PropertyDetails = ({ product }) => {
+  const defaultData = {
+    id: "N/A",
+    total_price: "N/A",
+    flat_size: "N/A",
+    bathroom: "N/A",
+    bedroom: "N/A",
+    car_parking: false,
+    created_at: "N/A",
+    flat_type: "N/A",
+    status: "N/A",
+  };
+
+  const data = product || defaultData;
+
   const columns = [
     [
       {
         label: "Property ID",
-        value: "RT48",
+        value: data.id,
       },
       {
         label: "Price",
-        value: "$252,000",
+        value: data.total_price
+          ? `${data.total_price.toLocaleString()} ৳`
+          : "N/A",
       },
       {
         label: "Property Size",
-        value: "1500 Sq Ft",
+        value: data.flat_size ? `${data.flat_size} Sq Ft` : "N/A",
       },
       {
         label: "Bathrooms",
-        value: "3",
+        value: data.bathroom,
       },
       {
         label: "Bedrooms",
-        value: "2",
+        value: data.bedroom,
       },
     ],
     [
       {
         label: "Garage",
-        value: "2",
+        value: data.car_parking ? "Yes" : "No",
       },
       {
         label: "Garage Size",
-        value: "200 SqFt",
+        value: "N/A",
       },
       {
         label: "Year Built",
-        value: "2022",
+        value: data.created_at
+          ? new Date(data.created_at).getFullYear()
+          : "N/A",
       },
       {
         label: "Property Type",
-        value: "Apartment",
+        value: data.flat_type || "N/A",
       },
       {
         label: "Property Status",
-        value: "For Sale",
+        value: data.status || "N/A",
       },
     ],
   ];

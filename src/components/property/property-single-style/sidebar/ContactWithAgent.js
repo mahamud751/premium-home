@@ -11,33 +11,27 @@ const ContactWithAgent = () => {
             width={90}
             height={90}
             className="w90"
-            src="/images/team/agent-3.png"
+            src="/images/logo2.jpg"
             alt="avatar"
           />
         </div>
         <div className="single-contant ml20 ml0-xs">
-          <h6 className="title mb-1">Arlene McCoy</h6>
+          <h6 className="title mb-1">The Premium Homes LTD</h6>
           <div className="agent-meta mb10 d-md-flex align-items-center">
             <a className="text fz15" href="#">
               <i className="flaticon-call pe-1" />
-              (920) 012-3421
+              +880 1767 490 372
             </a>
           </div>
-          <Link
-            href="/agent-single/3"
-            className="text-decoration-underline fw600"
-          >
-            View Listings
-          </Link>
         </div>
       </div>
       {/* End agent-single */}
 
       <div className="d-grid">
-        <Link href="/agent-single/3" className="ud-btn btn-white2">
-          Contact Agent
+        <button className="ud-btn btn-white2">
+          Contact US
           <i className="fal fa-arrow-right-long" />
-        </Link>
+        </button>
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 "use client";
 import DashboardHeader from "@/components/common/DashboardHeader";
+import DefaultHeader from "@/components/common/DefaultHeader";
 import MobileMenu from "@/components/common/mobile-menu";
 import OrderDetailsCard from "@/components/property/dashboard/dashboard-my-properties/OrderDetailsCard";
 import DboardMobileNavigation from "@/components/property/dashboard/DboardMobileNavigation";
@@ -8,11 +9,11 @@ import SidebarDashboard from "@/components/property/dashboard/SidebarDashboard";
 import { useParams } from "next/navigation";
 
 const DashboardMyProperties = () => {
-  const { id } = useParams(); 
+  const { id } = useParams();
   return (
     <>
       {/* Main Header Nav */}
-      <DashboardHeader />
+      <DefaultHeader />
       {/* End Main Header Nav */}
 
       {/* Mobile Nav  */}
@@ -39,7 +40,7 @@ const DashboardMyProperties = () => {
                 <div className="col-xl-12">
                   <div className="ps-widget bgc-white bdrs12 default-box-shadow2 p30 mb30 overflow-hidden position-relative">
                     <div className="packages_table table-responsive">
-                      <OrderDetailsCard id={id}/>
+                      <OrderDetailsCard id={id} />
                     </div>
                   </div>
                 </div>
