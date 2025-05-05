@@ -81,25 +81,19 @@ const OrderDetailsCard = ({ id }) => {
             <h2 className="text-lg font-semibold text-gray-600 mb-2">
               EMI Amount
             </h2>
-            <p className="text-2xl font-bold text-yellow-500">
-              {order?.emi_amount}
-            </p>
+            <p className="text-2xl font-bold text-yellow-500">৳250000</p>
           </div>
           <div className="bg-white rounded-2xl shadow-md p-6 text-center">
             <h2 className="text-lg font-semibold text-gray-600 mb-2">
               Paid Amount
             </h2>
-            <p className="text-2xl font-bold text-green-500">
-              {order?.paid_amount}
-            </p>
+            <p className="text-2xl font-bold text-green-500">৳250000</p>
           </div>
           <div className="bg-white rounded-2xl shadow-md p-6 text-center">
             <h2 className="text-lg font-semibold text-gray-600 mb-2">
               Due Amount
             </h2>
-            <p className="text-2xl font-bold text-red-500">
-              {order?.due_amount}
-            </p>
+            <p className="text-2xl font-bold text-red-500">৳250000</p>
           </div>
         </div>
 
@@ -141,29 +135,18 @@ const OrderDetailsCard = ({ id }) => {
             </h2>
             <div className="space-y-3">
               <p className="text-gray-700">
-                <span className="font-medium">Unit Price:</span> BDT{" "}
-                {order.unit_price.toLocaleString()}
+                <span className="font-medium">Total Price:</span> BDT 500000
               </p>
               <p className="text-gray-700">
-                <span className="font-medium">Total Price:</span> BDT{" "}
-                {order.total_price.toLocaleString()}
+                <span className="font-medium">
+                  Land Registration & Mutation:
+                </span>{" "}
+                BDT 650000
               </p>
               <p className="text-gray-700">
-                <span className="font-medium">Parking Charge:</span> BDT{" "}
-                {order.parking_charge.toLocaleString()}
+                <span className="font-medium">Service charge:</span> BDT 85000
               </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Utility Charge:</span> BDT{" "}
-                {order.utility_charge.toLocaleString()}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Other Charges:</span> BDT{" "}
-                {order.other_charge.toLocaleString()}
-              </p>
-              <p className="text-gray-700">
-                <span className="font-medium">Discount:</span> BDT{" "}
-                {order.discount.toLocaleString()}
-              </p>
+
               <p className="text-gray-700">
                 <span className="font-medium">Payment Status:</span>{" "}
                 {order.payment_status}

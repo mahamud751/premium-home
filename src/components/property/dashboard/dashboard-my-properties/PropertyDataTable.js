@@ -98,7 +98,7 @@ const PropertyDataTable = () => {
                   </div>
                   <p className="list-text mb-0">{property?.description}</p>
                   <div className="list-price">
-                    <a href="#">৳ {property?.total_price.toLocaleString()}</a>
+                    <a href="#">৳ 500000</a>
                   </div>
                 </div>
               </div>
@@ -109,7 +109,7 @@ const PropertyDataTable = () => {
                 {property?.status}
               </span>
             </td>
-            <td className="vam">৳ {property?.unit_price.toLocaleString()}</td>
+            <td className="vam">৳ 500000</td>
             <td className="vam">
               <div className="d-flex">
                 <button
