@@ -20,6 +20,7 @@ const Blog = () => {
     data: blogsData,
     isLoading,
     isError,
+    error,
   } = useQuery({
     queryKey: ["blogs"],
     queryFn: fetchBlogs,
@@ -39,7 +40,9 @@ const Blog = () => {
     return (
       <section className="our-faq pt-0 py-12 md:px-4">
         <div className="container mx-auto max-w-7xl">
-          <p className="text-center text-red-600">{isError}</p>
+          <p className="text-center text-red-600">
+            Error loading blogs: {error?.message || "Something went wrong"}
+          </p>
         </div>
       </section>
     );
@@ -53,18 +56,33 @@ const Blog = () => {
         const date = moment(blog?.created_at);
         const month = date.format("MMMM");
         const day = date.format("DD");
+        // Sanitize the HTML content
+
         return (
           <div className="col-sm-6 col-lg-4" key={blog?.id}>
             <Link href={`/blogs/${blog?.id}`}>
               <div className="blog-style1">
                 <div className="blog-img">
-                  <Image
-                    width={386}
-                    height={271}
-                    className="w-100 h-100 cover"
-                    src={blog?.image}
-                    alt={blog?.title}
-                  />
+                  {blog?.image?.[0] ? (
+                    <Image
+                      width={386}
+                      height={271}
+                      className="w-100 h-72 cover"
+                      src={blog.image[0]} // Access the first image in the array
+                      alt={blog?.title || "Blog image"}
+                      onError={(e) => {
+                        e.target.src = "/fallback-image.jpg"; // Fallback image
+                      }}
+                    />
+                  ) : (
+                    <Image
+                      width={386}
+                      height={271}
+                      className="w-100 h-100 cover"
+                      src="/fallback-image.jpg" // Fallback image if no image is available
+                      alt="No image available"
+                    />
+                  )}
                 </div>
                 <div className="blog-content">
                   <div className="date">
@@ -74,9 +92,6 @@ const Blog = () => {
                   <a className="tag" href="#">
                     {blog?.title}
                   </a>
-                  <h6 className="title mt-1">
-                    <Link href={`/blogs/${blog?.id}`}>{blog?.content}</Link>
-                  </h6>
                 </div>
               </div>
             </Link>

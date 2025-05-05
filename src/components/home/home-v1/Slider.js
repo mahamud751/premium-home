@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import styles from "../../../app/Slider.module.css"; // Adjust path as needed
 import UseFetch from "@/hooks/useFetch";
 
- 
-
 const Slider = () => {
   const { data, loading, error } = UseFetch(`v1/banners`);
   const [items, setItems] = useState([]);
@@ -14,7 +12,7 @@ const Slider = () => {
     if (data && data.data) {
       const mappedItems = data.data.map((banner) => ({
         name: banner.title,
-        description: `Explore more about this banner at ${banner.link}`,  
+        description: `Explore more about this banner at ${banner.link}`,
         image: banner.image[0], // Use first image from array
       }));
       setItems(mappedItems);
@@ -51,11 +49,11 @@ const Slider = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <div className={styles.content}>
+            {/* <div className={styles.content}>
               <div className={styles.name}>{item.name}</div>
               <div className={styles.description}>{item.description}</div>
               <button>See More</button>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

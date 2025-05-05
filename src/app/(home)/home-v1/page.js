@@ -172,9 +172,6 @@ const Home_V1 = () => {
             <div className="col-lg-6 m-auto" data-aos="fade-up">
               <div className="main-title text-start text-md-center">
                 <h2 className="title">From Our Blog</h2>
-                <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
-                </p>
               </div>
             </div>
           </div>

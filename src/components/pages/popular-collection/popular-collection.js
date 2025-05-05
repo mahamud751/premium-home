@@ -14,30 +14,30 @@ const PopularCollection = () => {
   const collections = [
     {
       category: "Luxury Collection",
-      location: "Dhaka",
+      location: "Ashulia",
       thumbnail:
-        "https://plus.unsplash.com/premium_photo-1733760180239-ef05b25dd5ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D",
+        "https://i.ibb.co.com/QvvHd73T/Whats-App-Image-2025-05-05-at-09-31-29-2.jpg",
       videoUrl: "https://www.youtube.com/watch?v=4jnzf1yj48M",
     },
     {
       category: "Classic Collection",
-      location: "Rajshahi",
+      location: "Ashulia",
       thumbnail:
-        "https://plus.unsplash.com/premium_photo-1733760125447-a363befe9aab?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://i.ibb.co.com/9kRZ18XK/Whats-App-Image-2025-05-05-at-09-31-28.jpg",
       videoUrl: "https://www.youtube.com/watch?v=TDGgyVwF9qc",
     },
     {
       category: "Wellness Communities",
       location: "Chapainawabganj",
       thumbnail:
-        "https://plus.unsplash.com/premium_photo-1733760125474-0cf0d3aac257?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://i.ibb.co.com/JjKs59yP/Whats-App-Image-2025-05-05-at-09-31-29-1.jpg",
       videoUrl: "https://www.youtube.com/watch?v=TDGgyVwF9qc",
     },
     {
       category: "Commercial Collection",
       location: "Bougra",
       thumbnail:
-        "https://plus.unsplash.com/premium_photo-1733760125440-e20199e6dc11?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://i.ibb.co.com/0RQxtGW8/Whats-App-Image-2025-05-05-at-09-31-29.jpg",
       videoUrl: "https://www.youtube.com/watch?v=TDGgyVwF9qc",
     },
   ];
