@@ -79,21 +79,18 @@ const Home_V1 = () => {
             <div className="col-lg-9">
               <div className="main-title2">
                 <h2 className="title">Properties by Cities</h2>
-                <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
-                </p>
               </div>
             </div>
             {/* End col-lg-9 */}
 
-            <div className="col-lg-3">
+            {/* <div className="col-lg-3">
               <div className="text-start text-lg-end mb-3">
                 <Link className="ud-btn2" href="/map-v4">
                   See All Cities
                   <i className="fal fa-arrow-right-long" />
                 </Link>
               </div>
-            </div>
+            </div> */}
             {/* End col-lg-3 */}
           </div>
           {/* End .row */}

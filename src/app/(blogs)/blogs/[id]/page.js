@@ -1,15 +1,38 @@
+"use client";
 import CallToActions from "@/components/common/CallToActions";
 import DefaultHeader from "@/components/common/DefaultHeader";
 import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import BlogContent from "@/components/home/home-v1/blog/BlogContent";
+import { useAuth } from "@/hooks/auth";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import Link from "next/link";
-
-export const metadata = {
-  title: "Blog  || Homez - Real Estate NextJS Template",
-};
+import { useParams } from "next/navigation";
 
 const SingleBlog = () => {
+  const { id } = useParams();
+  const { token } = useAuth();
+
+  const fetchSingleProduct = async (id, token) => {
+    const response = await axios.get(
+      `https://premium.samironbarai.xyz/v1/blogs/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return response.data.data;
+  };
+  const { data: blog } = useQuery({
+    queryKey: ["single-blog", id],
+    queryFn: () => fetchSingleProduct(id, token),
+    enabled: !!id && !!token,
+  });
+
+  console.log("blog", blog);
+
   return (
     <>
       {/* Main Header Nav */}
