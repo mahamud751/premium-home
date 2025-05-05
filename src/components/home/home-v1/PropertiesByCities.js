@@ -66,15 +66,21 @@ const PropertyByCities = () => {
           <div className="col-sm-6 col-lg-3" key={city?.id}>
             <Link href="/grid-full-2-col">
               <div className="home9-city-style position-relative mb30 mb20-md mb0-sm d-flex align-items-center">
-                <div className="city-img flex-shrink-0">
+                <div className=" flex-shrink-0">
                   <Image
-                    width={110}
-                    height={110}
+                    width={410}
+                    height={410}
                     src={imageSrc}
                     alt={city?.name || "Project image"}
-                    className="rounded"
+                    className="rounded object-cover"
                     onError={(e) => {
                       e.target.src = "/fallback-image.jpg"; // Fallback on error
+                    }}
+                    style={{
+                      width: "200px",
+                      height: "200px",
+                      objectFit: "cover",
+                      borderRadius: "8px",
                     }}
                   />
                 </div>
